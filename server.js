@@ -15,8 +15,7 @@ const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID;
 const AIRTABLE_TABLE_ID = process.env.AIRTABLE_TABLE_ID;
 
 if (!AIRTABLE_API_KEY || !AIRTABLE_BASE_ID || !AIRTABLE_TABLE_ID) {
-  console.error('Error: Missing Airtable credentials in .env file');
-  process.exit(1);
+  console.error('Warning: Missing Airtable credentials in .env — /api/save-booking will return 503 until AIRTABLE_API_KEY, AIRTABLE_BASE_ID and AIRTABLE_TABLE_ID are set.');
 }
 
 const AIRTABLE_FIELD_CLINIC_NAME = process.env.AIRTABLE_FIELD_CLINIC_NAME || 'Clinic Name';
@@ -26,6 +25,10 @@ const AIRTABLE_FIELD_PHONE = process.env.AIRTABLE_FIELD_PHONE || 'Phone number '
 const AIRTABLE_FIELD_LOCATION = process.env.AIRTABLE_FIELD_LOCATION || 'location ';
 
 app.post('/api/save-booking', async (req, res) => {
+  if (!AIRTABLE_API_KEY || !AIRTABLE_BASE_ID || !AIRTABLE_TABLE_ID) {
+    return res.status(503).json({ error: 'Booking storage is not configured' });
+  }
+
   const { clinic_name, contact_person, email, phone, location } = req.body;
 
   if (!clinic_name || !contact_person || !email || !phone || !location) {
@@ -93,6 +96,10 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: 'Internal server error' });
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+  });
+}
+
+module.exports = app;
