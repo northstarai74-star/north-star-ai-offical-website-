@@ -19,6 +19,12 @@ if (!AIRTABLE_API_KEY || !AIRTABLE_BASE_ID || !AIRTABLE_TABLE_ID) {
   process.exit(1);
 }
 
+const AIRTABLE_FIELD_CLINIC_NAME = process.env.AIRTABLE_FIELD_CLINIC_NAME || 'Clinic Name';
+const AIRTABLE_FIELD_CONTACT_PERSON = process.env.AIRTABLE_FIELD_CONTACT_PERSON || 'Name ';
+const AIRTABLE_FIELD_EMAIL = process.env.AIRTABLE_FIELD_EMAIL || 'Email';
+const AIRTABLE_FIELD_PHONE = process.env.AIRTABLE_FIELD_PHONE || 'Phone number ';
+const AIRTABLE_FIELD_LOCATION = process.env.AIRTABLE_FIELD_LOCATION || 'location ';
+
 app.post('/api/save-booking', async (req, res) => {
   const { clinic_name, contact_person, email, phone, location } = req.body;
 
@@ -37,11 +43,11 @@ app.post('/api/save-booking', async (req, res) => {
   const airtableData = {
     records: [{
       fields: {
-        "Clinic Name": clinic_name,
-        "Name ": contact_person,
-        "Email": email,
-        "Phone number ": phone,
-        "location ": location
+        [AIRTABLE_FIELD_CLINIC_NAME]: clinic_name,
+        [AIRTABLE_FIELD_CONTACT_PERSON]: contact_person,
+        [AIRTABLE_FIELD_EMAIL]: email,
+        [AIRTABLE_FIELD_PHONE]: phone,
+        [AIRTABLE_FIELD_LOCATION]: location
       }
     }]
   };
