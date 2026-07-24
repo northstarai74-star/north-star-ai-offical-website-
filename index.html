@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>North Star AI — The AI Receptionist for UK Dental Clinics</title>
+<meta name="description" content="North Star AI answers every call, books appointments and follows up 24/7 — so your dental clinic never loses another patient to voicemail. Live in 7 days.">
+<link rel="canonical" href="https://northstarai.co.uk/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="North Star AI — The AI Receptionist for UK Dental Clinics">
+<meta property="og:description" content="Stop losing patients to voicemail. North Star AI answers, books and follows up 24/7. Live in 7 days.">
+<meta property="og:url" content="https://northstarai.co.uk/">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"North Star AI","description":"AI voice receptionist for UK dental clinics.","url":"https://northstarai.co.uk/","areaServed":"GB","offers":{"@type":"AggregateOffer","priceCurrency":"GBP","lowPrice":"249"}}
+</script>
+<style>
+:root{
+  --bg:#0a0f1e;
+  --bg-2:#0c1224;
+  --ink:#070b16;
+  --card:#111a30;
+  --card-2:#0e1730;
+  --text:#ffffff;
+  --muted:rgba(255,255,255,.62);
+  --muted-2:rgba(255,255,255,.4);
+  --blue:#2d6bff;
+  --blue-2:#4d8bff;
+  --cyan:#37cdfb;
+  --line:rgba(255,255,255,.1);
+  --border:rgba(101,130,200,.28);
+  --glow:rgba(45,107,255,.5);
+  --maxw:1200px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.5;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+::selection{background:var(--blue);color:#fff}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button{font-family:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--blue-2);outline-offset:3px;border-radius:6px}
+
+/* deep space canvas background */
+#space{position:fixed;inset:0;z-index:0;pointer-events:none;display:block}
+.hero,.logos,section,footer,.sticky{position:relative;z-index:3}
+
+/* grain */
+body::before{
+  content:"";position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.04;mix-blend-mode:screen;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 40px}
+@media(max-width:600px){.wrap{padding:0 20px}}
+h1,h2,h3,h4{font-family:'Bricolage Grotesque','Inter',sans-serif;font-weight:700;line-height:1.05;letter-spacing:-.02em}
+.display{font-size:clamp(40px,6.4vw,75px);font-weight:800}
+.h2{font-size:clamp(30px,4.3vw,42px);font-weight:600;letter-spacing:-.02em}
+.lead{color:var(--muted);font-size:clamp(15px,1.5vw,18px);line-height:1.45}
+.typewriter{display:inline-grid;position:relative;max-width:100%;vertical-align:baseline}
+.typewriter .tw-sizer,.typewriter .tw-inner{grid-area:1/1}
+.typewriter .tw-sizer{visibility:hidden;white-space:normal;pointer-events:none}
+.typewriter .tw-inner{display:inline-flex;align-items:baseline;justify-content:center;max-width:100%}
+.typewriter .tw-text{white-space:pre-wrap}
+.typewriter .tw-cursor{display:inline-block;width:3px;height:.86em;margin-left:5px;border-radius:2px;background:var(--blue-2);box-shadow:0 0 14px var(--glow);transform:translateY(.08em);animation:twBlink .8s steps(1,end) infinite}
+@keyframes twBlink{50%{opacity:0}}
+@media(prefers-reduced-motion:reduce){.typewriter .tw-cursor{animation:none}}
+
+.pill{
+  display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:14px;
+  font-size:13px;font-weight:500;color:#cfe0ff;
+  background:rgba(45,107,255,.1);border:1px solid rgba(45,107,255,.45);
+  box-shadow:0 3px 12px rgba(45,107,255,.25);backdrop-filter:blur(5px);
+}
+.pill::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--blue-2);box-shadow:0 0 8px var(--blue-2)}
+.eyebrow-c{text-align:center}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;height:46px;padding:0 22px;border-radius:20px;font-size:14.5px;font-weight:600;transition:transform .3s cubic-bezier(.22,.8,.26,1),box-shadow .3s,background .3s,border-color .3s;position:relative}
+
+/* white button with glow */
+.btn-white{background:rgba(255,255,255,.92);color:#06122e;box-shadow:0 4px 15px rgba(255,255,255,.1)}
+.btn-white::before{content:"";position:absolute;inset:-2px;border-radius:inherit;background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.4),transparent 50%);opacity:0;z-index:-1;transition:opacity .3s;filter:blur(6px)}
+.btn-white:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(255,255,255,.2),0 0 20px rgba(255,255,255,.15)}
+.btn-white:hover::before{opacity:.6}
+.btn-white .arr{width:24px;height:24px;border-radius:50%;background:#06122e;color:#fff;display:grid;place-items:center;font-size:12px;margin-right:-8px}
+
+/* glass button with cyan glow */
+.btn-glass{background:rgba(101,130,200,.18);color:#fff;border:1px solid rgba(255,255,255,.38);box-shadow:inset 0 0 6px 3px rgba(101,130,200,.18),0 0 15px rgba(55,205,251,.0);backdrop-filter:blur(5px);transition:box-shadow .3s}
+.btn-glass::before{content:"";position:absolute;inset:-2px;border-radius:inherit;background:radial-gradient(circle at 50% 50%,rgba(55,205,251,.3),transparent 60%);opacity:0;z-index:-1;transition:opacity .3s;filter:blur(8px)}
+.btn-glass:hover{transform:translateY(-3px);border-color:var(--cyan);box-shadow:inset 0 0 6px 3px rgba(101,130,200,.18),0 0 25px rgba(55,205,251,.35)}
+.btn-glass:hover::before{opacity:.7}
+
+/* blue button with enhanced glow */
+.btn-blue{background:linear-gradient(180deg,var(--blue-2),var(--blue));color:#fff;box-shadow:0 8px 22px rgba(45,107,255,.4)}
+.btn-blue::before{content:"";position:absolute;inset:-2px;border-radius:inherit;background:radial-gradient(circle at 30% 30%,rgba(77,139,255,.5),transparent 50%);opacity:0;z-index:-1;transition:opacity .3s;filter:blur(8px)}
+.btn-blue:hover{transform:translateY(-3px);box-shadow:0 14px 35px rgba(45,107,255,.55),0 0 30px rgba(45,107,255,.4)}
+.btn-blue:hover::before{opacity:.8}
+.btn-lg{height:52px;padding:0 28px;font-size:15px;border-radius:22px}
+
+/* ===== nova glow button ===== */
+.btn-nova{
+  position:relative;overflow:hidden;
+  background:linear-gradient(135deg,var(--blue-2),var(--blue));
+  color:#fff;height:50px;padding:0 28px;border-radius:25px;
+  border:2px solid rgba(45,107,255,.6);
+  font-weight:600;font-size:15px;display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  transition:all .3s cubic-bezier(.22,.8,.26,1);
+  box-shadow:0 0 20px rgba(45,107,255,.4),inset 0 1px 0 rgba(255,255,255,.2);
+}
+.btn-nova::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);
+  animation:novaShine 3s ease-in-out infinite;
+}
+.btn-nova::after{
+  content:"";position:absolute;inset:-2px;border-radius:inherit;
+  background:radial-gradient(circle at 30% 30%,rgba(77,139,255,.5),transparent 50%);
+  opacity:0;z-index:-1;
+  transition:opacity .3s;filter:blur(8px);
+}
+.btn-nova:hover{
+  transform:translateY(-3px);
+  border-color:rgba(77,139,255,.9);
+  box-shadow:0 0 30px rgba(45,107,255,.6),0 8px 20px rgba(45,107,255,.35),inset 0 1px 0 rgba(255,255,255,.2);
+}
+.btn-nova:hover::after{
+  opacity:.8;
+}
+.btn-nova:active{
+  transform:translateY(-1px);
+  box-shadow:0 0 20px rgba(45,107,255,.4),inset 0 2px 4px rgba(0,0,0,.2);
+}
+@keyframes novaShine{
+  0%,100%{transform:translateX(-100%)}
+  50%{transform:translateX(100%)}
+}
+.btn-nova span{position:relative;z-index:1}
+
+/* ===== grid backdrop ===== */
+.gridbg{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.gridbg .v{position:absolute;top:-200%;height:500%;width:1px;background:rgba(255,255,255,.07)}
+.gridbg .v.l{left:50%;transform:translateX(-360px)}
+.gridbg .v.r{left:50%;transform:translateX(360px)}
+.gridbg .h{position:absolute;left:-200%;width:500%;height:1px;background:rgba(255,255,255,.07)}
+.gridbg .h.t{top:120px}.gridbg .h.b{bottom:120px}
+.gridbg .dot{position:absolute;width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.22)}
+@media(max-width:900px){.gridbg{display:none}}
+
+/* ===== header ===== */
+header{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .3s,border-color .3s;
+  background:linear-gradient(180deg,rgba(10,15,30,.9),rgba(10,15,30,0));border-bottom:1px solid transparent}
+header.scrolled{background:rgba(8,12,24,.86);backdrop-filter:blur(16px);border-bottom-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;font-family:'Bricolage Grotesque',sans-serif}
+.logo img{width:32px;height:32px}
+.menu{display:flex;gap:28px;font-size:14px;color:var(--muted)}
+.menu a:hover{color:#fff}
+.nav .btn{height:40px}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:8px}
+.burger span{width:22px;height:2px;background:#fff;border-radius:2px}
+@media(max-width:900px){.menu{display:none}.burger{display:flex}}
+
+/* ===== hero ===== */
+.hero{position:relative;padding:160px 0 90px;text-align:center;overflow:hidden;
+  background:radial-gradient(120% 80% at 50% 120%,rgba(45,107,255,.28),transparent 60%)}
+.hero .glowtop{position:absolute;left:50%;top:-10%;width:760px;height:520px;transform:translateX(-50%);
+  background:radial-gradient(closest-side,rgba(45,107,255,.34),transparent 75%);filter:blur(20px);z-index:0;pointer-events:none}
+.hero .wrap{position:relative;z-index:2}
+.hero h1{margin:22px auto 0;max-width:880px}
+.hero .lead{margin:22px auto 0;max-width:620px}
+.hero-cta{display:flex;gap:13px;justify-content:center;margin-top:34px;flex-wrap:wrap}
+.trust-row{display:flex;align-items:center;justify-content:center;gap:13px;margin-top:34px;flex-wrap:wrap}
+.avatars{display:flex}
+.avatars span{width:28px;height:28px;border-radius:50%;border:2px solid var(--bg);margin-left:-9px;background-size:cover;display:grid;place-items:center;font-size:10px;font-weight:700;color:#fff}
+.avatars span:first-child{margin-left:0}
+.trust-row p{color:var(--muted);font-size:14px}
+.hero-visual{position:relative;z-index:2;max-width:1140px;margin:60px auto 0;border-radius:24px;overflow:hidden;
+  border:1px solid var(--border);box-shadow:0 40px 90px rgba(0,0,0,.55);background:linear-gradient(160deg,rgba(16,27,57,.94),rgba(10,17,36,.92))}
+.service-accordion{position:relative;padding:30px 34px 36px;display:grid;gap:30px;text-align:left}
+.shot-top{display:flex;gap:7px}
+.shot-top i{width:11px;height:11px;border-radius:50%;background:rgba(255,255,255,.22)}
+.service-row{position:relative;border:0;border-bottom:1px solid rgba(101,130,200,.28);background:transparent;color:#fff;padding:0 0 30px;text-align:left;cursor:pointer;overflow:hidden}
+.service-row:last-child{border-bottom:0;padding-bottom:0}
+.service-head{width:100%;display:flex;align-items:center;justify-content:space-between;gap:24px;border:0;background:transparent;color:inherit;text-align:left;font:inherit;cursor:pointer;padding:0}
+.service-head h3{font-family:'Bricolage Grotesque','Inter',sans-serif;font-size:clamp(34px,5vw,64px);line-height:.95;letter-spacing:-.04em;text-transform:uppercase;color:rgba(255,255,255,.88);transition:.25s}
+.service-row.is-open .service-head h3{color:#fff}
+.service-icon{width:56px;height:56px;border-radius:50%;border:1px solid rgba(255,255,255,.22);display:grid;place-items:center;flex:none;position:relative;background:rgba(255,255,255,.05);box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
+.service-icon::before,.service-icon::after{content:"";position:absolute;width:20px;height:2px;border-radius:2px;background:#fff;transition:.25s}
+.service-icon::after{transform:rotate(90deg)}
+.service-row.is-open .service-icon::after{transform:rotate(0deg);opacity:0}
+.service-body{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .45s cubic-bezier(.22,.8,.26,1),opacity .25s,padding-top .45s;padding-top:0}
+.service-row.is-open .service-body{grid-template-rows:1fr;opacity:1;padding-top:24px}
+.service-body-inner{overflow:hidden;display:grid;gap:24px}
+.service-tags{display:flex;align-items:center;gap:14px;flex-wrap:wrap;color:rgba(255,255,255,.72);font-size:15px;font-weight:600}
+.service-tags span{display:inline-flex;align-items:center;gap:14px}
+.service-tags span:not(:last-child)::after{content:"";display:inline-block;width:36px;height:1px;background:rgba(255,255,255,.22)}
+.service-preview{position:relative;min-height:250px;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:linear-gradient(160deg,rgba(20,35,76,.78),rgba(9,14,30,.9));display:grid;grid-template-columns:1.2fr .8fr;gap:18px;padding:22px}
+.service-preview::before{content:"";position:absolute;inset:auto -20% -65% -20%;height:260px;background:radial-gradient(ellipse at center,rgba(45,107,255,.35),transparent 70%);filter:blur(20px);pointer-events:none}
+.service-panel{position:relative;border:1px solid rgba(255,255,255,.09);border-radius:16px;background:rgba(255,255,255,.045);padding:20px;display:flex;flex-direction:column;justify-content:center;min-height:190px}
+.service-panel h4{font-size:14px;color:var(--muted);font-weight:600;margin-bottom:16px;text-align:center}
+.bars{display:flex;align-items:flex-end;gap:10px;height:130px}
+.bars i{flex:1;border-radius:7px 7px 0 0;background:linear-gradient(180deg,var(--blue-2),rgba(45,107,255,.22))}
+.kpi{font-size:44px;font-weight:800;font-family:'Bricolage Grotesque',sans-serif;letter-spacing:-.03em;text-align:center}
+.kpi small{display:block;font-size:14px;color:var(--muted);font-weight:500;margin-top:8px;font-family:'Inter';letter-spacing:0}
+.chat{display:grid;gap:12px}
+.bub{font-size:13px;padding:11px 14px;border-radius:12px;max-width:92%}
+.bub.them{background:rgba(255,255,255,.06);border:1px solid var(--line)}
+.bub.ai{background:rgba(45,107,255,.16);border:1px solid rgba(45,107,255,.4);justify-self:end}
+.calendar-mini{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.calendar-mini i{height:42px;border-radius:10px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.08)}
+.calendar-mini i.on{background:linear-gradient(180deg,var(--blue-2),var(--blue));box-shadow:0 0 20px rgba(45,107,255,.35)}
+.sms-list{display:grid;gap:10px}
+.sms-list span{height:16px;border-radius:999px;background:rgba(255,255,255,.1)}
+.sms-list span:nth-child(2n){width:76%;background:rgba(45,107,255,.28)}
+.sms-list span:nth-child(3n){width:88%}
+@media(max-width:760px){.hero-visual{margin-top:42px}.service-accordion{padding:22px 18px}.service-head h3{font-size:clamp(30px,12vw,48px)}.service-icon{width:44px;height:44px}.service-preview{grid-template-columns:1fr;min-height:0}.service-tags{gap:9px;font-size:13px}.service-tags span:not(:last-child)::after{width:18px}.service-panel{min-height:150px}.kpi{font-size:36px}}
+
+/* ===== logos ===== */
+.logos{padding:54px 0 10px;text-align:center}
+.logos p{font-size:13px;letter-spacing:.05em;color:var(--muted-2);margin-bottom:26px}
+.logos .track{display:flex;align-items:center;justify-content:center;gap:54px;flex-wrap:wrap;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.logos b{font-size:18px;font-weight:700;color:rgba(255,255,255,.5);white-space:nowrap;font-family:'Bricolage Grotesque',sans-serif}
+
+section{position:relative;padding:100px 0}
+.sec-head{max-width:720px;margin:0 auto 56px;text-align:center}
+.sec-head .h2{margin-top:16px}
+.sec-head .lead{margin:14px auto 0;max-width:560px}
+
+/* ===== section-style bento ===== */
+#bento{overflow:hidden;padding:112px 0 138px}
+#bento .wrap{max-width:1320px}
+#bento .sec-head{position:relative;z-index:3;margin-bottom:58px}
+#bento .h2{font-size:clamp(40px,5vw,64px);line-height:.98}
+.bento{position:relative;height:760px;max-width:1200px;margin:0 auto;display:block;overflow:hidden;isolation:isolate;-webkit-mask-image:linear-gradient(180deg,#000 0,#000 90%,transparent 100%);mask-image:linear-gradient(180deg,#000 0,#000 90%,transparent 100%)}
+.bento::before{content:"";position:absolute;inset:42px 14%;border-radius:999px;background:radial-gradient(circle,rgba(45,107,255,.34),rgba(55,205,251,.08) 40%,transparent 70%);filter:blur(54px);opacity:.9;z-index:-1;animation:sectionPulse 8s ease-in-out infinite alternate}
+.bento::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 0,transparent 7%,transparent 93%,var(--bg) 100%);pointer-events:none;z-index:2;opacity:.65}
+.bento .b{position:absolute;overflow:hidden;border:1px solid rgba(101,130,200,.38);border-radius:20px;background:linear-gradient(145deg,rgba(18,31,68,.9),rgba(9,14,30,.96));padding:30px;display:flex;flex-direction:column;box-shadow:0 34px 80px rgba(0,0,0,.36),inset 0 1px 0 rgba(255,255,255,.06);transform:translate3d(0,0,0);animation:sectionDrift 9s ease-in-out infinite alternate;will-change:transform}
+.bento .b::before{content:"";position:absolute;inset:-1px;background:radial-gradient(90% 75% at 80% 10%,rgba(77,139,255,.28),transparent 58%);opacity:.72;pointer-events:none}
+.bento .b1{left:0;top:0;width:66%;height:335px}
+.bento .b2{right:0;top:0;width:32%;height:335px;animation-delay:-2.2s}
+.bento .b3{left:0;top:365px;width:32%;height:395px;animation-delay:-4.4s}
+.bento .b4{right:0;top:365px;width:66%;height:315px;animation-delay:-6.3s}
+.bento h4,.bento p,.bento .vis,.bento svg{position:relative;z-index:1}
+.bento h4{font-size:clamp(22px,2vw,28px);line-height:1.04;font-weight:700;letter-spacing:-.04em;margin-bottom:10px}
+.bento p{color:var(--muted);font-size:16px;line-height:1.45;max-width:460px}
+.bento .vis{margin-top:auto}
+.b-chart{height:190px;width:100%;display:block}
+.dotmatrix{display:grid;grid-template-columns:repeat(8,1fr);gap:10px;margin-top:auto}
+.dotmatrix i{aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.12)}
+.dotmatrix i.on{background:var(--blue-2);box-shadow:0 0 18px var(--glow)}
+.bolt{position:absolute;right:32px;bottom:0;width:122px;filter:drop-shadow(0 0 24px var(--glow));z-index:1}
+.b-glow{position:absolute;border-radius:50%;filter:blur(46px);opacity:.55;pointer-events:none}
+.b1 .b-glow{width:300px;height:300px;right:-70px;top:-80px;background:radial-gradient(circle,var(--glow),transparent 65%)}
+.b4 .b-glow{width:280px;height:280px;left:34%;bottom:-105px;background:radial-gradient(circle,rgba(55,205,251,.42),transparent 65%)}
+@keyframes sectionDrift{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(0,-16px,0) scale(1.012)}}
+@keyframes sectionPulse{from{transform:scale(.92);opacity:.62}to{transform:scale(1.08);opacity:.95}}
+@media(max-width:960px){
+  #bento{padding:90px 0 105px}
+  #bento .sec-head{margin-bottom:34px}
+  .bento{height:auto;display:grid;grid-template-columns:1fr;gap:16px;max-width:560px;overflow:visible;-webkit-mask-image:none;mask-image:none}
+  .bento::before,.bento::after{display:none}
+  .bento .b{position:relative!important;left:auto!important;right:auto!important;top:auto!important;width:auto!important;height:auto!important;min-height:250px;animation:none}
+  .bento .b3{min-height:330px}
+}
+
+/* ===== rotating feature cards ===== */
+.rotate-feature{display:grid;grid-template-columns:minmax(520px,1.05fr) minmax(360px,.7fr);gap:58px;align-items:center;min-height:650px;margin-top:-10px}
+.rotate-stage{position:relative;height:620px;perspective:1200px;overflow:visible}
+.rotate-stage::before{content:"";position:absolute;left:50%;top:50%;width:430px;height:430px;border-radius:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(45,107,255,.28),rgba(55,205,251,.08) 42%,transparent 70%);filter:blur(26px);opacity:.95}
+.rotate-card{position:absolute;left:50%;top:50%;width:320px;height:410px;border:1px solid rgba(101,130,200,.38);border-radius:18px;padding:22px;background:linear-gradient(150deg,rgba(19,32,70,.98),rgba(8,13,28,.98));box-shadow:0 32px 75px rgba(0,0,0,.46),inset 0 1px 0 rgba(255,255,255,.06);color:#fff;text-align:left;font:inherit;cursor:pointer;overflow:hidden;transform:translate(-50%,-50%) translate(var(--x,0),var(--y,0)) rotate(var(--r,0deg)) scale(var(--s,1));opacity:var(--o,1);z-index:var(--z,1);filter:brightness(var(--b,1));transition:transform .7s cubic-bezier(.22,.8,.26,1),opacity .55s,filter .55s,border-color .3s,box-shadow .3s}
+.rotate-card::before{content:"";position:absolute;inset:-1px;background:radial-gradient(120% 95% at 0% 0%,rgba(77,139,255,.36),transparent 55%);opacity:.65;pointer-events:none}
+.rotate-card.is-active{border-color:rgba(77,139,255,.78);box-shadow:0 36px 85px rgba(0,0,0,.55),0 0 42px rgba(45,107,255,.32),inset 0 1px 0 rgba(255,255,255,.08)}
+.rotate-card .tag{position:relative;display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#d8e4ff;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.07);border-radius:999px;padding:8px 11px}
+.rotate-card .tag::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--blue-2);box-shadow:0 0 12px var(--glow)}
+.rotate-card h3{position:relative;font-size:24px;line-height:1.05;margin:18px 0 8px;letter-spacing:-.02em}
+.rotate-card p{position:relative;color:rgba(255,255,255,.68);font-size:14px;line-height:1.48}
+.rotate-visual{position:relative;margin-top:auto;height:180px;border-radius:14px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.035);display:grid;place-items:center;overflow:hidden}
+.rotate-visual::before{content:"";position:absolute;width:230px;height:230px;border-radius:50%;background:radial-gradient(circle,rgba(77,139,255,.34),transparent 70%);filter:blur(28px)}
+.linechart{width:82%;max-width:270px;position:relative;z-index:1}
+.bars3d{display:flex;align-items:flex-end;gap:12px;height:145px;position:relative;z-index:1}
+.bars3d i{width:44px;border-radius:8px 8px 0 0;background:linear-gradient(180deg,var(--blue-2),var(--blue))}
+.riskwave{width:78%;max-width:270px;position:relative;z-index:1}
+.slotgrid{position:relative;z-index:1;display:grid;grid-template-columns:repeat(5,34px);gap:9px}
+.slotgrid i{height:26px;border-radius:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.08)}
+.slotgrid i.on{background:linear-gradient(180deg,#37cdfb,#2d6bff);box-shadow:0 0 20px rgba(45,107,255,.34)}
+.rotate-copy{position:relative;border:1px solid rgba(101,130,200,.28);border-radius:22px;padding:34px;background:linear-gradient(160deg,rgba(18,29,64,.72),rgba(8,13,28,.62));box-shadow:0 28px 70px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.05);overflow:hidden}
+.rotate-copy::before{content:"";position:absolute;right:-110px;top:-130px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(55,205,251,.24),transparent 68%);filter:blur(22px)}
+.rotate-copy .eyebrow{position:relative;display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#9ebcff;margin-bottom:18px}
+.rotate-copy .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--blue-2);box-shadow:0 0 14px var(--glow)}
+.rotate-copy h3{position:relative;font-size:clamp(30px,3.6vw,48px);line-height:1;margin-bottom:16px;letter-spacing:-.03em}
+.rotate-copy p{position:relative;color:var(--muted);font-size:16px;line-height:1.55;max-width:470px}
+.rotate-copy .btn{position:relative;width:max-content;margin-top:26px}
+.rotate-controls{position:relative;display:flex;align-items:center;gap:14px;margin-top:30px}
+.rbtn{width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.07);color:#fff;font-size:18px;display:grid;place-items:center;transition:.2s}
+.rbtn:hover{border-color:var(--blue-2);background:rgba(45,107,255,.18);transform:translateY(-2px)}
+.rotate-dots{display:flex;gap:8px}
+.rotate-dots button{width:8px;height:8px;border-radius:999px;border:0;background:rgba(255,255,255,.22);padding:0;transition:.25s}
+.rotate-dots button.is-active{width:26px;background:var(--blue-2);box-shadow:0 0 12px var(--glow)}
+@media(max-width:980px){.rotate-feature{grid-template-columns:1fr;gap:24px;min-height:auto}.rotate-stage{height:560px}.rotate-copy{max-width:620px;margin:0 auto}.rotate-card{width:min(300px,74vw);height:380px}}
+@media(max-width:620px){.rotate-stage{height:470px}.rotate-card{width:min(270px,78vw);height:340px;padding:18px}.rotate-card h3{font-size:21px}.rotate-visual{height:130px}.rotate-copy{padding:26px}.slotgrid{grid-template-columns:repeat(5,26px);gap:7px}.slotgrid i{height:20px}}
+
+/* ===== benefits — fluid card stack ===== */
+.stack-wrap{max-width:940px;margin:0 auto;position:relative}
+.stack{position:relative;height:620px;touch-action:pan-y;overflow:visible;isolation:isolate}
+.stack::before{content:"";position:absolute;left:50%;top:50%;width:min(86vw,780px);height:min(58vw,470px);border:1px dashed rgba(255,255,255,.16);border-radius:50%;transform:translate(-50%,-50%);opacity:.55;pointer-events:none}
+.stack::after{content:"";position:absolute;left:50%;top:50%;width:min(80vw,680px);height:min(52vw,410px);border-radius:50%;background:radial-gradient(circle,rgba(45,107,255,.25),rgba(55,205,251,.06) 48%,transparent 72%);filter:blur(34px);transform:translate(-50%,-50%);z-index:-1;pointer-events:none;animation:orbitGlow 7s ease-in-out infinite alternate}
+.scard{
+  position:absolute;left:50%;top:50%;border:1px solid var(--border);background:linear-gradient(165deg,#16224a,#0c1430);
+  box-shadow:0 30px 60px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.05);
+  display:flex;flex-direction:column;user-select:none;overflow:hidden;transform-origin:center center;
+  transition:transform .35s cubic-bezier(.22,.8,.26,1),opacity .35s,filter .35s,box-shadow .3s,border-color .3s;
+}
+.scard.is-active{width:min(700px,calc(100vw - 48px));height:360px;border-radius:24px;padding:46px;cursor:grab;opacity:1;filter:none;z-index:20;pointer-events:auto}
+.scard.is-active:active{cursor:grabbing}
+.scard.is-orbit{width:74px;height:74px;border-radius:50%;padding:0;align-items:center;justify-content:center;cursor:pointer;opacity:.82;filter:brightness(.9);z-index:6;pointer-events:auto;box-shadow:0 18px 36px rgba(0,0,0,.36),0 0 24px rgba(45,107,255,.18),inset 0 1px 0 rgba(255,255,255,.08)}
+.scard.is-orbit:hover{opacity:1;filter:none;border-color:rgba(77,139,255,.75);box-shadow:0 20px 42px rgba(0,0,0,.42),0 0 28px rgba(45,107,255,.32)}
+.scard .ic{width:62px;height:62px;border-radius:18px;display:grid;place-items:center;font-size:26px;background:linear-gradient(180deg,#4d8bff,#2057ff);color:#fff;box-shadow:0 14px 30px rgba(45,107,255,.48);margin-bottom:28px;transition:.4s}
+.scard.is-orbit .ic{width:100%;height:100%;border-radius:50%;margin:0;font-size:25px;box-shadow:none}
+.scard h4{font-size:clamp(28px,3.1vw,38px);font-weight:700;margin-bottom:14px;letter-spacing:-.045em;line-height:1.04}
+.scard p{color:var(--muted);font-size:18px;line-height:1.45;max-width:520px}
+.scard .snum{position:absolute;right:38px;top:36px;font-family:'Bricolage Grotesque',sans-serif;font-size:54px;font-weight:700;color:rgba(255,255,255,.07)}
+.scard.is-orbit h4,.scard.is-orbit p,.scard.is-orbit .snum{display:none}
+.stack-ctrl{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:-28px;position:relative;z-index:30}
+.sbtn{width:58px;height:58px;border-radius:50%;border:1px solid var(--border);background:rgba(101,130,200,.18);color:#fff;font-size:20px;transition:.2s;box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}
+.sbtn:hover{border-color:var(--blue-2);background:rgba(45,107,255,.24);transform:translateY(-2px)}
+.dots{display:flex;gap:10px;align-items:center}
+.dots button{width:10px;height:10px;border-radius:50%;border:none;background:rgba(255,255,255,.23);padding:0;cursor:pointer;transition:.25s}
+.dots button.on{background:var(--blue-2);width:30px;border-radius:999px;box-shadow:0 0 14px var(--glow)}
+@keyframes orbitGlow{from{opacity:.58;transform:translate(-50%,-50%) scale(.92)}to{opacity:.95;transform:translate(-50%,-50%) scale(1.05)}}
+@media(max-width:720px){
+  .stack{height:560px}
+  .scard.is-active{height:330px;padding:32px 26px}
+  .scard.is-orbit{width:58px;height:58px}
+  .scard .ic{width:54px;height:54px;font-size:23px;margin-bottom:22px}
+  .scard h4{font-size:26px}
+  .scard p{font-size:15.5px}
+  .scard .snum{font-size:40px;right:26px;top:24px}
+  .stack-ctrl{margin-top:-22px}
+  .sbtn{width:48px;height:48px}
+}
+
+/* ===== how it works — flip book ===== */
+.book{max-width:640px;margin:0 auto}
+.book-stage{position:relative;height:400px;perspective:1800px}
+.page{position:absolute;inset:0;border:1px solid var(--border);border-radius:24px;padding:44px;background:linear-gradient(165deg,#16224a,#0c1430);box-shadow:0 30px 60px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.05);display:flex;flex-direction:column;justify-content:center;backface-visibility:hidden;transform-origin:left center;transition:transform .7s cubic-bezier(.45,.05,.15,1),box-shadow .4s;cursor:pointer}
+.page.flipped{transform:rotateY(-178deg);box-shadow:none;cursor:default}
+.page .pagenum{position:absolute;right:38px;top:32px;font-family:'Bricolage Grotesque',sans-serif;font-size:44px;font-weight:700;color:rgba(255,255,255,.07)}
+.page .pic{width:62px;height:62px;border-radius:18px;display:grid;place-items:center;font-size:26px;background:linear-gradient(180deg,#4d8bff,#2057ff);color:#fff;box-shadow:0 14px 30px rgba(45,107,255,.48);margin-bottom:24px}
+.page h4{font-size:clamp(24px,2.6vw,30px);font-weight:700;margin-bottom:12px;letter-spacing:-.03em}
+.page p{color:var(--muted);font-size:16px;line-height:1.5;max-width:460px}
+.book-ctrl{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:26px}
+@media(max-width:640px){.book-stage{height:460px}.page{padding:30px 24px}}
+
+/* ===== metrics ===== */
+.metrics{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;max-width:900px;margin:0 auto}
+.metric{flex:1;min-width:180px;text-align:center}
+.metric .n{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:clamp(44px,6vw,65px);letter-spacing:-.05em;
+  background:linear-gradient(180deg,#fff,#9fbcff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.metric p{color:var(--muted);font-size:15px;margin-top:6px}
+
+/* ===== pricing ===== */
+#pricing .wrap{max-width:1640px}
+.offer{max-width:900px;margin:10px auto 0}
+.offer-in{position:relative;border:2px solid rgba(255,255,255,.22);border-radius:20px;padding:2px;background:radial-gradient(260% 140% at 50% -20%,rgba(33,120,222,.55) 0%,#0d0d0d 55%);box-shadow:0 0 50px rgba(13,118,242,.22),0 34px 72px rgba(0,0,0,.4)}
+.offer-in{padding:44px 40px;text-align:center}
+.offer-eyebrow{display:inline-block;margin-bottom:18px}
+.offer-in h3{font-size:clamp(24px,3vw,32px);font-weight:700;color:#fff;margin-bottom:14px}
+.offer-lead{max-width:620px;margin:0 auto;color:rgba(255,255,255,.78);font-size:15.5px;line-height:1.65}
+.offer-compare{display:grid;grid-template-columns:1fr 1fr;gap:22px;text-align:left;margin:34px 0 8px;padding:26px;border:1px solid rgba(255,255,255,.1);border-radius:14px;background:rgba(255,255,255,.03)}
+@media(max-width:640px){.offer-compare{grid-template-columns:1fr}}
+.offer-compare h5{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:14px}
+.offer-compare .get h5{color:#5dc868}
+.offer-compare ul{list-style:none;display:grid;gap:12px}
+.offer-compare .instead li{font-size:14.5px;color:rgba(255,255,255,.55);position:relative;padding-left:20px}
+.offer-compare .instead li::before{content:"✕";position:absolute;left:0;color:rgba(255,90,90,.7);font-size:12px}
+.offer-compare .get li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:rgba(255,255,255,.88)}
+.offer-compare .get li svg{flex:none;margin-top:3px}
+.offer-bottom{margin-top:30px;display:flex;flex-direction:column;align-items:center;gap:18px}
+.offer-live{font-size:13.5px;font-weight:700;color:#fff;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);padding:8px 16px;border-radius:20px}
+.offer-cta{max-width:280px;min-height:52px;border-radius:12px;background:linear-gradient(180deg,#438de5,#0d76f2);color:#fff;border-color:rgba(255,255,255,.18);box-shadow:0 16px 34px rgba(13,118,242,.3),inset 0 1px 0 rgba(255,255,255,.18)}
+.offer-cta:hover{box-shadow:0 20px 42px rgba(13,118,242,.42),inset 0 1px 0 rgba(255,255,255,.22)}
+
+/* ===== testimonials ===== */
+.tcols{display:grid;grid-template-columns:1fr 1fr;gap:14px;height:560px;overflow:hidden;
+  -webkit-mask-image:linear-gradient(180deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(180deg,transparent,#000 8%,#000 92%,transparent)}
+@media(max-width:760px){.tcols{grid-template-columns:1fr}.tcols .col2{display:none}}
+.col-track{display:flex;flex-direction:column;gap:14px;animation:scrollUp 32s linear infinite}
+.col2 .col-track{animation-direction:reverse;animation-duration:38s}
+@keyframes scrollUp{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+.tcard{border:1px solid var(--border);border-radius:15px;padding:22px;background:linear-gradient(0deg,var(--card),#1a2240)}
+.tcard .who{display:flex;align-items:center;gap:11px;margin-bottom:14px}
+.tcard .av{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-weight:700;color:#fff;background:linear-gradient(150deg,var(--blue-2),var(--blue))}
+.tcard .who b{font-size:14.5px;display:block}
+.tcard .who span{font-size:12.5px;color:var(--muted)}
+.tcard p{font-size:14px;color:rgba(255,255,255,.8)}
+
+/* ===== faq ===== */
+.faq{max-width:820px;margin:0 auto;display:grid;gap:12px}
+.fitem{border:1px solid var(--border);border-radius:15px;background:var(--card);overflow:hidden}
+.fq{width:100%;background:none;border:none;color:#fff;text-align:left;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px;font-size:17px;font-weight:600;font-family:'Bricolage Grotesque',sans-serif}
+.fitem.open .fq{color:var(--blue-2)}
+.fq .ic{position:relative;width:18px;height:18px;flex:none}
+.fq .ic::before,.fq .ic::after{content:"";position:absolute;background:var(--blue-2);border-radius:1px}
+.fq .ic::before{left:0;top:8px;width:18px;height:2px}
+.fq .ic::after{left:8px;top:0;width:2px;height:18px;transition:transform .3s}
+.fitem.open .fq .ic::after{transform:rotate(90deg);opacity:0}
+.fa{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.fa p{padding:0 22px 24px;color:var(--muted);font-size:15px;line-height:1.6}
+
+/* ===== final cta ===== */
+.cta-panel{position:relative;overflow:hidden;border-radius:24px;padding:78px 40px;text-align:center;
+  border:1px solid var(--border);
+  background:radial-gradient(60% 120% at 50% 120%,var(--cyan) 0%,var(--blue) 42%,var(--ink) 100%)}
+.cta-panel h3{font-size:clamp(30px,4vw,42px);font-weight:600}
+.cta-panel p{color:rgba(255,255,255,.85);margin:14px auto 28px;max-width:440px;font-size:16px}
+.cta-noise{position:absolute;inset:0;opacity:.08;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ===== footer ===== */
+footer{border-top:1px solid var(--line);background:var(--ink);padding:50px 0 36px}
+.foot{display:flex;justify-content:space-between;align-items:flex-start;gap:30px;flex-wrap:wrap}
+.foot .menu{display:flex;gap:26px;flex-wrap:wrap}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:34px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted-2);font-size:13.5px}
+.socials{display:flex;gap:16px}
+.socials a{color:var(--muted)}
+.socials a:hover{color:#fff}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+
+/* sticky mobile cta */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:90;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(8,12,24,.94);backdrop-filter:blur(14px);border-top:1px solid var(--line);display:none;transform:translateY(110%);transition:transform .35s}
+.sticky.show{transform:none}
+.sticky .btn{width:100%}
+@media(max-width:768px){.sticky{display:block}}
+</style>
+</head>
+<body>
+
+<canvas id="space" aria-hidden="true"></canvas>
+
+<header id="header">
+  <div class="wrap nav">
+    <a class="logo" href="#"><img src="logo.svg" alt=""> North Star AI</a>
+    <nav class="menu">
+      <a href="#bento">Features</a>
+      <a href="#benefits">Benefits</a>
+      <a href="#how">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-glass" href="demo-booking.html" data-loc="header">Book Demo</a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="glowtop"></div>
+  <div class="gridbg">
+    <div class="v l"></div><div class="v r"></div><div class="h t"></div><div class="h b"></div>
+    <div class="dot" style="left:calc(50% - 364px);top:116px"></div>
+    <div class="dot" style="left:calc(50% + 356px);top:116px"></div>
+  </div>
+  <div class="wrap">
+    <span class="pill">AI Reception for UK Dental Clinics</span>
+    <h1 class="display">Stop missing calls.<br><span class="typewriter" data-typewriter="Start booking patients.|Fill empty chairs.|Recover lost bookings.">Start booking patients.</span></h1>
+    <p class="lead">North Star AI answers every call, books appointments and follows up automatically — so your clinic never loses another patient to voicemail.</p>
+    <div class="hero-cta">
+      <a class="btn btn-white" href="demo-booking.html" data-loc="hero">Book Free Demo <span class="arr">→</span></a>
+      <a class="btn btn-glass" href="#how">See how it works</a>
+    </div>
+    <div class="trust-row">
+      <div class="avatars">
+        <span style="background:linear-gradient(150deg,#4d8bff,#2d6bff)">SH</span>
+        <span style="background:linear-gradient(150deg,#37cdfb,#2d8fb0)">JO</span>
+        <span style="background:linear-gradient(150deg,#7d6bff,#4d3bff)">PK</span>
+        <span style="background:linear-gradient(150deg,#4d8bff,#2d6bff)">DM</span>
+      </div>
+      <p><b style="color:#fff">Thousands of clinics</b> are grabbing this opportunity</p>
+    </div>
+
+    <div class="hero-visual">
+      <div class="service-accordion" id="serviceAccordion">
+        <div class="shot-top"><i></i><i></i><i></i></div>
+        <article class="service-row is-open">
+          <button class="service-head" type="button" aria-expanded="true">
+            <h3>Answer every call</h3>
+            <span class="service-icon" aria-hidden="true"></span>
+          </button>
+          <div class="service-body">
+            <div class="service-body-inner">
+              <div class="service-tags">
+                <span>24/7 reception</span><span>Emergency routing</span><span>Call summaries</span><span>Human voice</span>
+              </div>
+              <div class="service-preview">
+                <div class="service-panel">
+                  <h4>Calls answered this month</h4>
+                  <div class="bars">
+                    <i style="height:42%"></i><i style="height:58%"></i><i style="height:50%"></i><i style="height:72%"></i><i style="height:64%"></i><i style="height:88%"></i><i style="height:100%"></i>
+                  </div>
+                </div>
+                <div class="service-panel">
+                  <div class="kpi">98%<small>answered automatically</small></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="service-row">
+          <button class="service-head" type="button" aria-expanded="false">
+            <h3>Book patients live</h3>
+            <span class="service-icon" aria-hidden="true"></span>
+          </button>
+          <div class="service-body">
+            <div class="service-body-inner">
+              <div class="service-tags">
+                <span>Dentally</span><span>SOE Exact</span><span>iSmile</span><span>Pabau</span>
+              </div>
+              <div class="service-preview">
+                <div class="service-panel">
+                  <div class="chat">
+                    <div class="bub them">Any check-ups free this week?</div>
+                    <div class="bub ai">Thursday 2:30pm works - booked.</div>
+                    <div class="bub them">Perfect, thank you.</div>
+                  </div>
+                </div>
+                <div class="service-panel">
+                  <div class="calendar-mini">
+                    <i></i><i class="on"></i><i></i><i></i>
+                    <i></i><i></i><i class="on"></i><i></i>
+                    <i class="on"></i><i></i><i></i><i class="on"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="service-row">
+          <button class="service-head" type="button" aria-expanded="false">
+            <h3>Recover lost revenue</h3>
+            <span class="service-icon" aria-hidden="true"></span>
+          </button>
+          <div class="service-body">
+            <div class="service-body-inner">
+              <div class="service-tags">
+                <span>Missed-call SMS</span><span>Follow-up</span><span>Revenue reports</span><span>No spreadsheets</span>
+              </div>
+              <div class="service-preview">
+                <div class="service-panel">
+                  <div class="kpi">&pound;3,200<small>recovered this month</small></div>
+                </div>
+                <div class="service-panel">
+                  <div class="sms-list">
+                    <span style="width:92%"></span><span></span><span></span><span style="width:64%"></span><span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENTO -->
+<section id="bento">
+  <div class="gridbg"><div class="v l"></div><div class="v r"></div></div>
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="pill">Meet North Star AI</span>
+      <h2 class="h2">Answer with confidence.<br><span class="typewriter" data-typewriter="Backed by intelligence.|Guided by clinic data.|Built for dentists.">Backed by intelligence.</span></h2>
+    </div>
+    <div class="bento rv">
+      <div class="b b1">
+        <div class="b-glow"></div>
+        <h4>Precision-driven call handling</h4>
+        <p>Every call answered, understood and routed — guided by data, not guesswork.</p>
+        <div class="vis">
+          <svg class="b-chart" viewBox="0 0 600 120" preserveAspectRatio="none">
+            <defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2d6bff" stop-opacity=".5"/><stop offset="1" stop-color="#2d6bff" stop-opacity="0"/></linearGradient></defs>
+            <path d="M0,100 L60,92 L120,96 L180,72 L240,80 L300,50 L360,58 L420,30 L480,38 L540,14 L600,20 L600,120 L0,120 Z" fill="url(#g1)"/>
+            <path d="M0,100 L60,92 L120,96 L180,72 L240,80 L300,50 L360,58 L420,30 L480,38 L540,14 L600,20" fill="none" stroke="#4d8bff" stroke-width="2.5"/>
+          </svg>
+        </div>
+      </div>
+      <div class="b b2">
+        <h4>Books into your diary</h4>
+        <p>Slots filled directly in your PMS — no double entry.</p>
+        <div class="dotmatrix vis">
+          <i></i><i class="on"></i><i></i><i class="on"></i><i></i><i class="on"></i><i></i><i></i>
+          <i class="on"></i><i></i><i class="on"></i><i></i><i class="on"></i><i></i><i class="on"></i><i></i>
+          <i></i><i class="on"></i><i></i><i class="on"></i><i></i><i></i><i class="on"></i><i></i>
+        </div>
+      </div>
+      <div class="b b3">
+        <h4>Your front desk, optimised in real-time</h4>
+        <p>Maya adapts to every caller — calm, accurate and always on-brand.</p>
+        <div class="vis" style="display:grid;gap:9px;margin-top:18px">
+          <div class="bub them" style="font-size:12.5px;padding:9px 12px;border-radius:11px;background:rgba(255,255,255,.06);border:1px solid var(--line)">Hi, I'd like to book a hygiene appointment.</div>
+          <div class="bub ai" style="font-size:12.5px;padding:9px 12px;border-radius:11px;background:rgba(45,107,255,.16);border:1px solid rgba(45,107,255,.4)">Of course! I have Friday 9am or Monday 4pm.</div>
+          <div class="bub them" style="font-size:12.5px;padding:9px 12px;border-radius:11px;background:rgba(255,255,255,.06);border:1px solid var(--line)">Friday is perfect.</div>
+        </div>
+      </div>
+      <div class="b b4">
+        <div class="b-glow"></div>
+        <h4>More bookings, less effort</h4>
+        <p>A fully automated front desk that recovers revenue while your team focuses on patients.</p>
+        <svg class="bolt" viewBox="0 0 100 130"><path d="M58 5 L20 72 L46 72 L34 125 L82 52 L54 52 Z" fill="#2d6bff"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROTATING FEATURE CARDS -->
+<section id="features">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="pill">Smarter reception starts here</span>
+      <h2 class="h2"><span class="typewriter" data-typewriter="Built to fill your diary|Built to recover bookings|Built for busy clinics">Built to fill your diary</span></h2>
+    </div>
+    <div class="rotate-feature rv" id="rotateFeatures">
+      <div class="rotate-stage" aria-label="Rotating feature cards">
+        <button class="rotate-card is-active" type="button" data-meta="Call intelligence" data-title="Transparent call tracking" data-desc="Every call, booking and recovered patient in one simple monthly report, real-time, easy to read, no spreadsheets.">
+          <span class="tag">01 Report</span>
+          <h3>Transparent call tracking</h3>
+          <p>See every call, booking and recovered patient clearly.</p>
+          <div class="rotate-visual">
+            <svg class="linechart" viewBox="0 0 360 180"><polyline points="0,150 50,130 100,140 150,95 200,110 250,60 300,70 360,25" fill="none" stroke="#4d8bff" stroke-width="3"/><circle cx="360" cy="25" r="6" fill="#fff"/></svg>
+          </div>
+        </button>
+        <button class="rotate-card" type="button" data-meta="Diary sync" data-title="Seamless PMS integration" data-desc="Books directly into Dentally, SOE Exact, iSmile, Pabau and more. No new hardware, no changes to your existing number.">
+          <span class="tag">02 Sync</span>
+          <h3>Seamless PMS integration</h3>
+          <p>Bookings land in the diary your team already uses.</p>
+          <div class="rotate-visual">
+            <div class="bars3d"><i style="height:60%"></i><i style="height:82%"></i><i style="height:100%"></i></div>
+          </div>
+        </button>
+        <button class="rotate-card" type="button" data-meta="Priority routing" data-title="Smart call handling" data-desc="Maya recognises emergencies and routes them exactly how you decide, transfer, emergency line, or a flagged priority message.">
+          <span class="tag">03 Routing</span>
+          <h3>Smart call handling</h3>
+          <p>Emergency and priority calls follow your rules.</p>
+          <div class="rotate-visual">
+            <svg class="riskwave" viewBox="0 0 340 160"><path d="M0,80 Q42,20 85,80 T170,80 T255,80 T340,80" fill="none" stroke="#37cdfb" stroke-width="3"/><path d="M0,110 Q42,60 85,110 T170,110 T255,110 T340,110" fill="none" stroke="#2d6bff" stroke-width="2.5" opacity=".6"/></svg>
+          </div>
+        </button>
+        <button class="rotate-card" type="button" data-meta="Recovered bookings" data-title="Missed-call recovery" data-desc="Patients who slip through get a fast SMS follow-up, so missed calls turn back into booked appointments.">
+          <span class="tag">04 Recovery</span>
+          <h3>Missed-call recovery</h3>
+          <p>Follow-up messages recover the enquiries you missed.</p>
+          <div class="rotate-visual">
+            <div class="slotgrid">
+              <i></i><i class="on"></i><i></i><i class="on"></i><i></i>
+              <i class="on"></i><i></i><i class="on"></i><i></i><i class="on"></i>
+              <i></i><i class="on"></i><i class="on"></i><i></i><i></i>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="rotate-copy">
+        <span class="eyebrow" id="rotateMeta">Call intelligence</span>
+        <h3 id="rotateTitle">Transparent call tracking</h3>
+        <p id="rotateDesc">Every call, booking and recovered patient in one simple monthly report, real-time, easy to read, no spreadsheets.</p>
+        <a class="btn btn-glass" href="demo-booking.html" data-loc="feature">Learn more</a>
+        <div class="rotate-controls">
+          <button class="rbtn" type="button" id="rotatePrev" aria-label="Previous feature">&larr;</button>
+          <div class="rotate-dots" id="rotateDots" aria-hidden="true"></div>
+          <button class="rbtn" type="button" id="rotateNext" aria-label="Next feature">&rarr;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section id="benefits">
+  <div class="gridbg"><div class="v l"></div><div class="v r"></div></div>
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="pill">Comprehensive benefits</span>
+      <h2 class="h2">Fewer missed calls.<br><span class="typewriter" data-typewriter="More booked chairs.|More recovered revenue.|More patients reached.">More booked chairs.</span></h2>
+    </div>
+    <div class="stack-wrap rv">
+      <div class="stack" id="stack">
+        <article class="scard"><div class="ic">📞</div><h4>Answers every call</h4><p>No hold music, no voicemail — every patient reaches a friendly voice instantly, day or night.</p><span class="snum">01</span></article>
+        <article class="scard"><div class="ic">📅</div><h4>Books while you sleep</h4><p>Slots filled overnight, on weekends and through every lunch rush — straight into your diary.</p><span class="snum">02</span></article>
+        <article class="scard"><div class="ic">💬</div><h4>SMS follow-up</h4><p>Automatically texts back anyone who slipped through, recovering lost bookings without lifting a finger.</p><span class="snum">03</span></article>
+        <article class="scard"><div class="ic">🔗</div><h4>PMS integration</h4><p>Writes straight into Dentally, SOE Exact, iSmile and Pabau — no double entry, no spreadsheets.</p><span class="snum">04</span></article>
+        <article class="scard"><div class="ic">🛡️</div><h4>GDPR compliant</h4><p>UK-hosted, encrypted, and never used to train models for anyone else. Delete your data anytime.</p><span class="snum">05</span></article>
+        <article class="scard"><div class="ic">📊</div><h4>Call analytics</h4><p>See every call, booking and recovered patient in a clear, simple monthly report.</p><span class="snum">06</span></article>
+      </div>
+      <div class="stack-ctrl">
+        <button class="sbtn" id="sPrev" aria-label="Previous benefit">←</button>
+        <div class="dots" id="sDots" aria-hidden="true"></div>
+        <button class="sbtn" id="sNext" aria-label="Next benefit">→</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METRICS -->
+<section id="metrics">
+  <div class="wrap">
+    <div class="sec-head rv"><h2 class="h2"><span class="typewriter" data-typewriter="Performance you can measure|Revenue you can prove|Calls you can track">Performance you can measure</span></h2></div>
+    <div class="metrics rv">
+      <div class="metric"><div class="n">98%</div><p>of calls answered, day or night</p></div>
+      <div class="metric"><div class="n">40+</div><p>bookings recovered per month</p></div>
+      <div class="metric"><div class="n">7 days</div><p>from sign-up to going live</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="pill">How it works</span>
+      <h2 class="h2"><span class="typewriter" data-typewriter="From sign-up to live in 24 hours|Four steps to your AI receptionist|Simple setup, real results">From sign-up to live in 24 hours</span></h2>
+      <p class="lead">Flip through the setup — click a page, use the arrows, or jump with the dots.</p>
+    </div>
+    <div class="book rv" id="book">
+      <div class="book-stage">
+        <div class="page" data-n="1"><span class="pagenum">01</span><div class="pic">📞</div><h4>Call routing set up</h4><p>We connect your existing clinic number — patients call exactly what they already have, nothing changes on their end.</p></div>
+        <div class="page" data-n="2"><span class="pagenum">02</span><div class="pic">🧠</div><h4>AI trained on your clinic</h4><p>Your FAQs, opening hours, services and diary rules are built into a custom knowledge base and voice agent.</p></div>
+        <div class="page" data-n="3"><span class="pagenum">03</span><div class="pic">⚡</div><h4>Live within 24 hours</h4><p>Once we have what we need from you, your AI receptionist is answering real calls the very next day.</p></div>
+        <div class="page" data-n="4"><span class="pagenum">04</span><div class="pic">📊</div><h4>Track every call</h4><p>Missed-call recoveries, bookings and call summaries roll in through your analytics dashboard from day one.</p></div>
+      </div>
+      <div class="book-ctrl">
+        <button class="sbtn" id="bPrev" aria-label="Previous page">←</button>
+        <div class="dots" id="bDots" aria-hidden="true"></div>
+        <button class="sbtn" id="bNext" aria-label="Next page">→</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="gridbg"><div class="v l"></div><div class="v r"></div></div>
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="pill">Pricing options</span>
+      <h2 class="h2"><span class="typewriter" data-typewriter="Pricing that pays for itself|Plans that recover revenue|Simple dental AI pricing">Pricing that pays for itself</span></h2>
+      <p class="lead">Less than a week of a receptionist's salary — for a receptionist who never sleeps.</p>
+    </div>
+    <div class="offer rv">
+      <div class="offer-in">
+        <span class="pill offer-eyebrow">AI Reception System for Solo Dental Clinics</span>
+        <h3>Never Miss Another Patient Call Again</h3>
+        <p class="offer-lead">We install a fully trained AI receptionist that answers every call 24/7, books appointments, handles patient enquiries, and saves your practice 10+ hours every week — without hiring another receptionist.</p>
+        <div class="offer-compare">
+          <div class="col instead">
+            <h5>Instead of...</h5>
+            <ul>
+              <li>Missing new patient calls</li>
+              <li>Paying staff to answer repetitive questions</li>
+              <li>Losing bookings after hours</li>
+              <li>Interrupting treatment to answer the phone</li>
+            </ul>
+          </div>
+          <div class="col get">
+            <h5>You get...</h5>
+            <ul>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.5 3.5L13 4.5" stroke="#5dc868" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Every call answered, 24/7</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.5 3.5L13 4.5" stroke="#5dc868" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Patients booked automatically</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.5 3.5L13 4.5" stroke="#5dc868" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>FAQs handled instantly</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.5 3.5L13 4.5" stroke="#5dc868" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Human transfer when needed</li>
+            </ul>
+          </div>
+        </div>
+        <div class="offer-bottom">
+          <span class="offer-live">⚡ Go live within 24 hours</span>
+          <a class="btn btn-white offer-cta" href="demo-booking.html" data-loc="pricing">Get Quote <span class="arr">→</span></a>
+        </div>
+      </div>
+    </div>
+    <p style="text-align:center;color:var(--muted-2);font-size:13.5px;margin-top:22px">Need a bigger rollout or custom terms? <a href="demo-booking.html" style="color:var(--blue-2)">Talk to sales →</a></p>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="pill">Testimonials</span>
+      <h2 class="h2"><span class="typewriter" data-typewriter="Trusted by forward-thinking clinics|Trusted by UK dental teams|Loved by practice managers">Trusted by forward-thinking clinics</span></h2>
+      <p class="lead">Real stories from practice managers who've transformed their front desk with North Star AI.</p>
+    </div>
+    <div class="tcols rv">
+      <div class="col col1">
+        <div class="col-track" id="trackA"></div>
+      </div>
+      <div class="col col2">
+        <div class="col-track" id="trackB"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="gridbg"><div class="v l"></div><div class="v r"></div></div>
+  <div class="wrap">
+    <div class="sec-head rv"><h2 class="h2">FAQ</h2></div>
+    <div class="faq rv" id="faqList">
+      <div class="fitem open"><button class="fq">How is North Star AI different?<span class="ic"></span></button><div class="fa"><p>It isn't just an answering service — it's a real AI receptionist trained on your clinic's treatments, fees and policies. It books directly into your diary, follows up on missed calls by SMS, and sounds completely human. Live in seven days, with no new hardware.</p></div></div>
+      <div class="fitem"><button class="fq">How long does setup take?<span class="ic"></span></button><div class="fa"><p>Seven days from sign-up to live calls. We connect your phone line, train North Star AI on your clinic's information, and your team tests it — all within a week, with no changes to your existing number.</p></div></div>
+      <div class="fitem"><button class="fq">Will patients know they're talking to an AI?<span class="ic"></span></button><div class="fa"><p>It sounds natural and conversational, and most patients can't tell. We recommend transparency — it can introduce itself as your clinic's virtual receptionist if you prefer, and always hands complex or sensitive calls to your team.</p></div></div>
+      <div class="fitem"><button class="fq">Does it integrate with my practice management software?<span class="ic"></span></button><div class="fa"><p>Yes. It books directly into Dentally, SOE Exact, iSmile, Pabau and most major UK systems. If you use something else, we'll set up a tailored connection during onboarding.</p></div></div>
+      <div class="fitem"><button class="fq">Is patient data safe and GDPR compliant?<span class="ic"></span></button><div class="fa"><p>Yes. All call data is encrypted in transit and at rest, processed under UK GDPR, and never used to train models for other businesses. You can request deletion at any time. See our <a href="privacy.html" style="color:var(--blue-2)">Privacy Policy</a>.</p></div></div>
+      <div class="fitem"><button class="fq">Can I cancel anytime?<span class="ic"></span></button><div class="fa"><p>Yes. Monthly plans roll month-to-month with no lock-in — cancel with 30 days' notice. We'll always export your call history for you when you leave.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="wrap">
+    <div class="cta-panel rv">
+      <div class="cta-noise"></div>
+      <h3>Start booking smarter today</h3>
+      <p>Book a 20-minute demo and we'll show you North Star AI live on a real call.</p>
+      <a class="btn btn-white btn-lg" href="demo-booking.html" data-loc="final">Book Your Free Demo <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <a class="logo" href="#"><img src="logo.svg" alt=""> North Star AI</a>
+      <nav class="menu">
+        <a href="#hero">Home</a><a href="#bento">Features</a><a href="#benefits">Benefits</a><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="#testimonials">Testimonials</a><a href="#faq">FAQ</a>
+      </nav>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 North Star AI. All rights reserved.</span>
+      <nav class="menu"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky"><a class="btn btn-white" href="demo-booking.html" data-loc="sticky">Book Free Demo — No card required</a></div>
+
+<script>
+"use strict";
+function trackEvent(n,p){ if(typeof gtag==="function") gtag("event",n,p||{}); }
+
+/* ===== Deep Space animated background ===== */
+(function(){
+  var c=document.getElementById("space"); if(!c) return;
+  var ctx=c.getContext("2d"), w,h,dpr,stars,nebulae,shoot=[],reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
+  function rand(a,b){return a+Math.random()*(b-a);}
+  function resize(){
+    dpr=Math.min(devicePixelRatio||1,2);
+    w=c.width=innerWidth*dpr; h=c.height=innerHeight*dpr;
+    c.style.width=innerWidth+"px"; c.style.height=innerHeight+"px";
+    var count=Math.round(innerWidth*innerHeight/6500);
+    stars=[]; for(var i=0;i<count;i++){stars.push({x:Math.random()*w,y:Math.random()*h,z:rand(.3,1),r:rand(.3,1.4)*dpr,tw:rand(0,Math.PI*2),sp:rand(.6,2.2)});}
+    nebulae=[
+      {x:.22*w,y:.18*h,r:.5*w,col:"45,107,255",a:.14},
+      {x:.82*w,y:.32*h,r:.42*w,col:"55,205,251",a:.1},
+      {x:.6*w,y:.9*h,r:.55*w,col:"45,107,255",a:.12}
+    ];
+  }
+  function frame(t){
+    ctx.clearRect(0,0,w,h);
+    // base gradient
+    var g=ctx.createLinearGradient(0,0,0,h);
+    g.addColorStop(0,"#0a0f1e"); g.addColorStop(.5,"#0b1326"); g.addColorStop(1,"#080c1a");
+    ctx.fillStyle=g; ctx.fillRect(0,0,w,h);
+    // nebulae
+    for(var n=0;n<nebulae.length;n++){var b=nebulae[n];
+      var rg=ctx.createRadialGradient(b.x,b.y,0,b.x,b.y,b.r);
+      rg.addColorStop(0,"rgba("+b.col+","+b.a+")"); rg.addColorStop(1,"rgba("+b.col+",0)");
+      ctx.fillStyle=rg; ctx.fillRect(0,0,w,h);
+    }
+    // stars
+    for(var i=0;i<stars.length;i++){var s=stars[i];
+      var a=reduce?s.z*.8:(.4+.6*Math.abs(Math.sin(s.tw+t*0.001*s.sp)))*s.z;
+      ctx.globalAlpha=a; ctx.fillStyle="#dce8ff";
+      ctx.beginPath(); ctx.arc(s.x,s.y,s.r,0,6.283); ctx.fill();
+      if(!reduce){ s.y+=s.z*.06*dpr; if(s.y>h){s.y=0;s.x=Math.random()*w;} }
+    }
+    ctx.globalAlpha=1;
+    // shooting stars
+    if(!reduce){
+      if(Math.random()<0.004 && shoot.length<2){shoot.push({x:rand(0,w),y:rand(0,h*.5),vx:rand(6,11)*dpr,vy:rand(2,4)*dpr,life:1});}
+      for(var k=shoot.length-1;k>=0;k--){var sh=shoot[k]; sh.x+=sh.vx; sh.y+=sh.vy; sh.life-=.012;
+        if(sh.life<=0||sh.x>w||sh.y>h){shoot.splice(k,1);continue;}
+        var lg=ctx.createLinearGradient(sh.x,sh.y,sh.x-sh.vx*8,sh.y-sh.vy*8);
+        lg.addColorStop(0,"rgba(220,235,255,"+sh.life+")"); lg.addColorStop(1,"rgba(220,235,255,0)");
+        ctx.strokeStyle=lg; ctx.lineWidth=1.6*dpr; ctx.beginPath();
+        ctx.moveTo(sh.x,sh.y); ctx.lineTo(sh.x-sh.vx*8,sh.y-sh.vy*8); ctx.stroke();
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+  resize(); addEventListener("resize",resize,{passive:true}); requestAnimationFrame(frame);
+})();
+
+/* header scroll */
+(function(){var h=document.getElementById("header");function u(){h.classList.toggle("scrolled",scrollY>20);}addEventListener("scroll",u,{passive:true});u();})();
+
+/* burger -> jump to pricing */
+document.getElementById("burger").addEventListener("click",function(){document.getElementById("pricing").scrollIntoView({behavior:"smooth"});});
+
+/* CTA tracking */
+document.querySelectorAll("[data-loc]").forEach(function(el){el.addEventListener("click",function(){trackEvent("cta_click",{location:el.dataset.loc});});});
+
+/* reveal */
+(function(){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});},{threshold:.12});document.querySelectorAll(".rv").forEach(function(el){io.observe(el);});})();
+
+/* typewriter text effect */
+(function(){
+  var nodes=[].slice.call(document.querySelectorAll("[data-typewriter]"));
+  if(!nodes.length) return;
+  var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function parseWords(el){
+    return (el.getAttribute("data-typewriter")||el.textContent||"")
+      .split("|").map(function(w){return w.trim();}).filter(Boolean);
+  }
+  function setup(el){
+    var words=parseWords(el);
+    if(!words.length) return;
+    var first=words[0], longest=words.slice().sort(function(a,b){return b.length-a.length;})[0];
+    el.setAttribute("aria-live","polite");
+    el.setAttribute("aria-atomic","true");
+    el.textContent="";
+    var sizer=document.createElement("span");
+    sizer.className="tw-sizer";
+    sizer.textContent=longest;
+    var inner=document.createElement("span");
+    inner.className="tw-inner";
+    var text=document.createElement("span");
+    text.className="tw-text";
+    text.textContent=first;
+    var cursor=document.createElement("span");
+    cursor.className="tw-cursor";
+    cursor.setAttribute("aria-hidden","true");
+    inner.appendChild(text);
+    inner.appendChild(cursor);
+    el.appendChild(sizer);
+    el.appendChild(inner);
+    if(reduce||words.length<2) return;
+    var typing=Number(el.dataset.typingSpeed)||70;
+    var deleting=Number(el.dataset.deletingSpeed)||38;
+    var pause=Number(el.dataset.pauseDuration)||1350;
+    var word=0, chars=first.length, removing=false, started=false, timer;
+    function tick(){
+      var current=words[word%words.length];
+      if(!removing&&chars<current.length){
+        chars++;
+        text.textContent=current.slice(0,chars);
+        timer=setTimeout(tick,typing);
+      }else if(!removing&&chars===current.length){
+        timer=setTimeout(function(){removing=true;tick();},pause);
+      }else if(removing&&chars>0){
+        chars--;
+        text.textContent=current.slice(0,chars);
+        timer=setTimeout(tick,deleting);
+      }else{
+        removing=false;
+        word=(word+1)%words.length;
+        timer=setTimeout(tick,typing);
+      }
+    }
+    function start(){
+      if(started) return;
+      started=true;
+      timer=setTimeout(tick,pause);
+    }
+    function stop(){clearTimeout(timer);}
+    el._typewriterStart=start;
+    el._typewriterStop=stop;
+  }
+  nodes.forEach(setup);
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        var el=entry.target;
+        if(entry.isIntersecting) el._typewriterStart&&el._typewriterStart();
+        else el._typewriterStop&&el._typewriterStop();
+      });
+    },{threshold:.2});
+    nodes.forEach(function(el){io.observe(el);});
+  }else{
+    nodes.forEach(function(el){el._typewriterStart&&el._typewriterStart();});
+  }
+})();
+
+/* service accordion */
+(function(){
+  var acc=document.getElementById("serviceAccordion"); if(!acc) return;
+  var rows=[].slice.call(acc.querySelectorAll(".service-row"));
+  function openRow(row){
+    rows.forEach(function(item){
+      var open=item===row;
+      item.classList.toggle("is-open",open);
+      var head=item.querySelector(".service-head");
+      if(head) head.setAttribute("aria-expanded",open?"true":"false");
+    });
+  }
+  rows.forEach(function(row){
+    row.querySelector(".service-head").addEventListener("click",function(){openRow(row);});
+  });
+})();
+
+/* rotating feature cards */
+(function(){
+  var root=document.getElementById("rotateFeatures"); if(!root) return;
+  var stage=root.querySelector(".rotate-stage"), cards=[].slice.call(root.querySelectorAll(".rotate-card"));
+  var meta=document.getElementById("rotateMeta"), title=document.getElementById("rotateTitle"), desc=document.getElementById("rotateDesc");
+  var dotsWrap=document.getElementById("rotateDots"), prev=document.getElementById("rotatePrev"), next=document.getElementById("rotateNext");
+  var active=0, timer, startX=0, reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  cards.forEach(function(_,i){
+    var dot=document.createElement("button");
+    dot.type="button";
+    dot.addEventListener("click",function(){setActive(i);auto();});
+    dotsWrap.appendChild(dot);
+  });
+  function radius(){
+    var w=stage.clientWidth||620;
+    if(innerWidth<620) return Math.min(108,w*.22);
+    if(innerWidth<980) return Math.min(148,w*.24);
+    return Math.min(190,w*.26);
+  }
+  function distance(angle){
+    var a=((angle%360)+360)%360;
+    return Math.min(a,360-a);
+  }
+  function render(){
+    var r=radius(), step=360/cards.length;
+    cards.forEach(function(card,i){
+      var raw=(i-active)*step;
+      var norm=((raw+180)%360+360)%360-180;
+      var d=distance(raw);
+      var x=Math.cos(raw*Math.PI/180)*r;
+      var y=Math.sin(raw*Math.PI/180)*r;
+      var scale=i===active?1.04:Math.max(.72,1-d/620);
+      var opacity=i===active?1:(d>=170?.34:.72);
+      card.style.setProperty("--x",x+"px");
+      card.style.setProperty("--y",y+"px");
+      card.style.setProperty("--r",(norm*.07)+"deg");
+      card.style.setProperty("--s",scale);
+      card.style.setProperty("--o",opacity);
+      card.style.setProperty("--z",Math.round(120-d));
+      card.style.setProperty("--b",i===active?1:.86);
+      card.classList.toggle("is-active",i===active);
+    });
+    var current=cards[active];
+    meta.textContent=current.dataset.meta;
+    title.textContent=current.dataset.title;
+    desc.textContent=current.dataset.desc;
+    [].forEach.call(dotsWrap.children,function(dot,i){dot.classList.toggle("is-active",i===active);});
+  }
+  function setActive(i){active=(i+cards.length)%cards.length;render();}
+  function step(dir){setActive(active+dir);}
+  function stop(){clearInterval(timer);}
+  function auto(){stop(); if(!reduced) timer=setInterval(function(){step(1);},3600);}
+  cards.forEach(function(card,i){card.addEventListener("click",function(){setActive(i);auto();});});
+  prev.addEventListener("click",function(){step(-1);auto();});
+  next.addEventListener("click",function(){step(1);auto();});
+  root.addEventListener("mouseenter",stop);
+  root.addEventListener("mouseleave",auto);
+  stage.addEventListener("pointerdown",function(e){startX=e.clientX;});
+  stage.addEventListener("pointerup",function(e){
+    var dx=e.clientX-startX;
+    if(Math.abs(dx)>36){step(dx<0?1:-1);auto();}
+  });
+  addEventListener("resize",render,{passive:true});
+  render(); auto();
+})();
+
+/* how-it-works flip book */
+(function(){
+  var pages=Array.prototype.slice.call(document.querySelectorAll("#book .page"));
+  if(!pages.length) return;
+  var n=pages.length, current=0;
+  var dotsWrap=document.getElementById("bDots");
+  pages.forEach(function(_,i){
+    var d=document.createElement("button");
+    d.setAttribute("aria-label","Go to page "+(i+1));
+    d.addEventListener("click",function(){ goTo(i); });
+    dotsWrap.appendChild(d);
+  });
+  var dots=Array.prototype.slice.call(dotsWrap.children);
+  function render(){
+    pages.forEach(function(p,i){
+      p.classList.toggle("flipped",i<current);
+      p.style.zIndex=i<current?i:(n-i+50);
+    });
+    dots.forEach(function(d,i){ d.classList.toggle("on",i===current); });
+  }
+  function goTo(i){ current=Math.max(0,Math.min(n-1,i)); render(); trackEvent("how_it_works_page",{page:current+1}); }
+  document.getElementById("bNext").addEventListener("click",function(){ goTo(current+1===n?0:current+1); });
+  document.getElementById("bPrev").addEventListener("click",function(){ goTo(current-1<0?n-1:current-1); });
+  pages.forEach(function(p,i){ p.addEventListener("click",function(){ if(i===current) goTo(current+1===n?0:current+1); }); });
+  render();
+})();
+
+/* FAQ */
+document.querySelectorAll(".fitem").forEach(function(item){
+  var q=item.querySelector(".fq"),a=item.querySelector(".fa");
+  if(item.classList.contains("open")) a.style.maxHeight=a.scrollHeight+"px";
+  q.setAttribute("aria-expanded",item.classList.contains("open"));
+  q.addEventListener("click",function(){
+    var open=item.classList.contains("open");
+    document.querySelectorAll(".fitem.open").forEach(function(o){o.classList.remove("open");o.querySelector(".fa").style.maxHeight="0";o.querySelector(".fq").setAttribute("aria-expanded","false");});
+    if(!open){item.classList.add("open");a.style.maxHeight=a.scrollHeight+"px";q.setAttribute("aria-expanded","true");}
+  });
+});
+
+/* ===== Fluid card stack (Benefits) ===== */
+(function(){
+  var stack=document.getElementById("stack"); if(!stack) return;
+  var cards=[].slice.call(stack.querySelectorAll(".scard"));
+  var dotsWrap=document.getElementById("sDots"), n=cards.length, active=Math.min(2,n-1), timer, raf;
+  cards.forEach(function(card,i){
+    var d=document.createElement("button");
+    d.setAttribute("aria-label","Show benefit "+(i+1));
+    d.addEventListener("click",function(){jumpTo(i);auto();});
+    dotsWrap.appendChild(d);
+    card.setAttribute("tabindex","0");
+    card.addEventListener("click",function(){if(i!==active){jumpTo(i);auto();}});
+    card.addEventListener("keydown",function(e){
+      if(e.key==="Enter"||e.key===" "){e.preventDefault();if(i!==active){jumpTo(i);auto();}}
+    });
+  });
+  function ellipse(){
+    var w=stack.getBoundingClientRect().width;
+    var small=matchMedia("(max-width:720px)").matches;
+    return small
+      ? {rx:Math.max(116,Math.min(190,w*.34)),ry:Math.max(118,Math.min(168,w*.3))}
+      : {rx:Math.max(240,Math.min(390,w*.43)),ry:Math.max(172,Math.min(238,w*.26))};
+  }
+  function render(){
+    var e=ellipse(), orbitCount=Math.max(1,n-1);
+    var small=matchMedia("(max-width:720px)").matches;
+    var stageW=stack.getBoundingClientRect().width;
+    var stageH=stack.getBoundingClientRect().height;
+    var cx=stageW/2, cy=stageH/2;
+    var activeW=Math.min(small?stageW:700,innerWidth-48);
+    var activeH=small?330:360;
+    var orbitSize=small?58:74;
+    var activePad=small?"32px 26px":"46px";
+    cards.forEach(function(card,i){
+      var isActive=i===active;
+      card.classList.toggle("is-active",isActive);
+      card.classList.toggle("is-orbit",!isActive);
+      card.setAttribute("aria-current",isActive?"true":"false");
+      if(isActive){
+        card.style.width=activeW+"px";
+        card.style.height=activeH+"px";
+        card.style.padding=activePad;
+        card.style.borderRadius="24px";
+        card.style.left=(cx-activeW/2)+"px";
+        card.style.top=(cy-activeH/2)+"px";
+        card.style.transform="scale(1)";
+        card.style.opacity="1";
+        card.style.filter="none";
+        card.style.zIndex=20;
+        return;
+      }
+      var rel=(i-active+n)%n;
+      var angle=(-90+(rel-1)*(360/orbitCount))*(Math.PI/180);
+      var x=Math.cos(angle)*e.rx, y=Math.sin(angle)*e.ry;
+      var scale=y<0?.84:.94;
+      card.style.width=orbitSize+"px";
+      card.style.height=orbitSize+"px";
+      card.style.padding="0";
+      card.style.borderRadius="50%";
+      card.style.left=(cx+x-orbitSize/2)+"px";
+      card.style.top=(cy+y-orbitSize/2)+"px";
+      card.style.transform="scale("+scale+")";
+      card.style.opacity=y<0?".62":".88";
+      card.style.filter=y<0?"brightness(.78)":"brightness(.94)";
+      card.style.zIndex=Math.round(8+y/28);
+    });
+    [].forEach.call(dotsWrap.children,function(d,i){d.classList.toggle("on",i===active);});
+  }
+  function next(){active=(active+1)%n;render();}
+  function prev(){active=(active-1+n)%n;render();}
+  function jumpTo(i){active=i;render();}
+  function auto(){clearInterval(timer);timer=setInterval(next,4500);}
+  document.getElementById("sNext").addEventListener("click",function(){next();auto();});
+  document.getElementById("sPrev").addEventListener("click",function(){prev();auto();});
+  var sx=0,drag=false;
+  stack.addEventListener("pointerdown",function(e){drag=true;sx=e.clientX;clearInterval(timer);});
+  addEventListener("pointerup",function(e){
+    if(!drag) return; drag=false; var dx=e.clientX-sx;
+    if(dx<-45) next(); else if(dx>45) prev();
+    auto();
+  });
+  addEventListener("resize",function(){cancelAnimationFrame(raf);raf=requestAnimationFrame(render);});
+  stack.addEventListener("mouseenter",function(){clearInterval(timer);});
+  stack.addEventListener("mouseleave",auto);
+  render(); auto();
+})();
+
+/* testimonials — build two scrolling columns (duplicated for seamless loop) */
+(function(){
+  var data=[
+    ["SH","Sarah Hughes","Practice Manager, Brighton","We used to lose every call after 5:30pm. North Star AI picked up 47 in its first month — 19 turned into booked exams."],
+    ["JO","James Okafor","Clinic Director, Manchester","Patients genuinely can't tell it's AI. It's polite, knows our fees, and never has a bad day."],
+    ["PK","Priya Kaur","Operations Lead, Leeds","Setup was the easiest part — seven days, exactly as promised. By week two it ran our entire lunch rush."],
+    ["DM","David Mercer","Owner, Bristol","I was sceptical about AI talking to patients. Then I heard the recordings. It handles nervous callers beautifully."],
+    ["RA","Rachel Adeyemi","Front Desk Lead, Cardiff","The SMS follow-up alone recovered nine bookings last month. It pays for itself."],
+    ["TC","Tom Clarke","Principal Dentist, Sheffield","Our team finally focuses on the patient in the chair instead of a ringing phone."]
+  ];
+  function card(d){return '<div class="tcard"><div class="who"><div class="av">'+d[0]+'</div><div><b>'+d[1]+'</b><span>'+d[2]+'</span></div></div><p>'+d[3]+'</p></div>';}
+  var a=data.slice(0,3), b=data.slice(3);
+  document.getElementById("trackA").innerHTML=(a.map(card).join(""))+(a.map(card).join(""));
+  document.getElementById("trackB").innerHTML=(b.map(card).join(""))+(b.map(card).join(""));
+})();
+
+/* sticky mobile cta */
+(function(){var bar=document.getElementById("sticky"),hero=document.querySelector(".hero");function u(){bar.classList.toggle("show",scrollY>hero.offsetHeight*0.85);}addEventListener("scroll",u,{passive:true});u();})();
+</script>
+</body>
+</html>
