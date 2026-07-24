@@ -3,6 +3,85 @@
 // in both because Vercel's Node runtime and Express share res.status().json()
 // and populate req.body from a JSON request body.
 
+// Each logical form field maps to an Airtable column. Resolution order:
+//   1. An explicit AIRTABLE_FIELD_* env var (exact override), else
+//   2. Auto-detected from the target table's real column names (aliases below),
+//      so this keeps working when a base uses "Name" / "Contact Person" / "Name ",
+//      else
+//   3. The first alias as a sensible default.
+const FIELD_SPECS = {
+  clinic_name:    { env: 'AIRTABLE_FIELD_CLINIC_NAME',    aliases: ['Clinic Name', 'Clinic', 'Practice Name', 'Practice'] },
+  contact_person: { env: 'AIRTABLE_FIELD_CONTACT_PERSON', aliases: ['Contact Person', 'Contact Name', 'Contact', 'Full Name', 'Name'] },
+  email:          { env: 'AIRTABLE_FIELD_EMAIL',          aliases: ['Email', 'Email Address', 'E-mail', 'Mail'] },
+  phone:          { env: 'AIRTABLE_FIELD_PHONE',          aliases: ['Phone Number', 'Phone', 'Phone No', 'Contact Number', 'Mobile', 'Telephone'] },
+  location:       { env: 'AIRTABLE_FIELD_LOCATION',       aliases: ['Clinic Location', 'Location', 'Address', 'City', 'Postcode', 'Post Code'] }
+};
+
+// Airtable field types that are computed/read-only and cannot be written to.
+const READ_ONLY_TYPES = new Set([
+  'formula', 'rollup', 'count', 'lookup', 'multipleLookupValues',
+  'createdTime', 'createdBy', 'lastModifiedTime', 'lastModifiedBy',
+  'autoNumber', 'aiText', 'button'
+]);
+
+const normalize = (s) => String(s).toLowerCase().replace(/\s+/g, ' ').trim();
+
+// Cache the resolved column map per base+table so we don't hit the schema API
+// on every request (only on a cold start or after the TTL).
+const schemaCache = new Map();
+const SCHEMA_TTL_MS = 5 * 60 * 1000;
+
+async function fetchWritableColumnNames(apiKey, baseId, tableId) {
+  const res = await fetch(`https://api.airtable.com/v0/meta/bases/${baseId}/tables`, {
+    headers: { Authorization: `Bearer ${apiKey}` }
+  });
+  if (!res.ok) return null; // e.g. token lacks schema.bases:read scope
+  const data = await res.json();
+  const table = (data.tables || []).find((t) => t.id === tableId || t.name === tableId);
+  if (!table) return null;
+  return table.fields.filter((f) => !READ_ONLY_TYPES.has(f.type)).map((f) => f.name);
+}
+
+async function resolveColumnMap(apiKey, baseId, tableId) {
+  const cacheKey = `${baseId}/${tableId}`;
+  const cached = schemaCache.get(cacheKey);
+  if (cached && Date.now() - cached.ts < SCHEMA_TTL_MS) return cached.map;
+
+  let actualNames = null;
+  try {
+    actualNames = await fetchWritableColumnNames(apiKey, baseId, tableId);
+  } catch {
+    actualNames = null;
+  }
+
+  const byNormalized = new Map();
+  if (actualNames) {
+    for (const name of actualNames) byNormalized.set(normalize(name), name);
+  }
+
+  const map = {};
+  for (const [key, spec] of Object.entries(FIELD_SPECS)) {
+    const override = (process.env[spec.env] || '').trim();
+    if (override) {
+      map[key] = override;
+      continue;
+    }
+    let resolved = null;
+    if (actualNames) {
+      for (const alias of spec.aliases) {
+        const hit = byNormalized.get(normalize(alias));
+        if (hit) { resolved = hit; break; }
+      }
+    }
+    map[key] = resolved || spec.aliases[0];
+  }
+
+  // Only cache when we actually read the schema, so a transient failure
+  // (or a token missing schema scope) is retried on the next request.
+  if (actualNames) schemaCache.set(cacheKey, { map, ts: Date.now() });
+  return map;
+}
+
 module.exports = async (req, res) => {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
@@ -17,12 +96,6 @@ module.exports = async (req, res) => {
   if (!AIRTABLE_API_KEY || !AIRTABLE_BASE_ID || !AIRTABLE_TABLE_ID) {
     return res.status(503).json({ error: 'Booking storage is not configured' });
   }
-
-  const fieldClinicName = process.env.AIRTABLE_FIELD_CLINIC_NAME || 'Clinic Name';
-  const fieldContactPerson = process.env.AIRTABLE_FIELD_CONTACT_PERSON || 'Contact Person';
-  const fieldEmail = process.env.AIRTABLE_FIELD_EMAIL || 'Email';
-  const fieldPhone = process.env.AIRTABLE_FIELD_PHONE || 'Phone Number';
-  const fieldLocation = process.env.AIRTABLE_FIELD_LOCATION || 'Clinic Location';
 
   // Vercel usually parses JSON bodies, but guard against a raw string body.
   let body = req.body;
@@ -45,14 +118,19 @@ module.exports = async (req, res) => {
     return res.status(400).json({ error: 'Invalid phone number' });
   }
 
+  const col = await resolveColumnMap(AIRTABLE_API_KEY, AIRTABLE_BASE_ID, AIRTABLE_TABLE_ID);
+
   const airtableData = {
+    // typecast lets Airtable coerce values (e.g. text -> single select) instead
+    // of rejecting the whole record.
+    typecast: true,
     records: [{
       fields: {
-        [fieldClinicName]: clinic_name,
-        [fieldContactPerson]: contact_person,
-        [fieldEmail]: email,
-        [fieldPhone]: phone,
-        [fieldLocation]: location
+        [col.clinic_name]: clinic_name,
+        [col.contact_person]: contact_person,
+        [col.email]: email,
+        [col.phone]: phone,
+        [col.location]: location
       }
     }]
   };
