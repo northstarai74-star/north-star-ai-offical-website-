@@ -1,6 +1,21 @@
+# Robots.txt for North Star AI
+# Allow all crawlers to index the site
+
 User-agent: *
 Allow: /
-Disallow: /privacy.html
-Disallow: /terms.html
+Allow: /index.html
+Allow: /privacy.html
+Allow: /terms.html
+Allow: /demo-booking.html
 
+# Disallow sensitive paths
+Disallow: /api/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Crawl delays (optional, helps with server load)
+Crawl-delay: 1
+
+# Sitemaps
 Sitemap: https://northstarai.co.uk/sitemap.xml
+Sitemap: https://northstarai.co.uk/sitemap.json

@@ -1,0 +1,137 @@
+{
+  "schemas": {
+    "organization": {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "North Star AI",
+      "url": "https://northstarai.co.uk/",
+      "logo": "https://northstarai.co.uk/logo.svg",
+      "description": "AI voice receptionist for UK dental clinics",
+      "sameAs": [
+        "https://twitter.com/northstarai",
+        "https://linkedin.com/company/northstarai",
+        "https://facebook.com/northstarai"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+44-xxx-xxxx",
+        "contactType": "Customer Service"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "GB"
+      }
+    },
+    "softwareApplication": {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "North Star AI",
+      "applicationCategory": "BusinessApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "249",
+        "priceCurrency": "GBP"
+      },
+      "description": "AI voice receptionist that answers calls, books appointments and follows up 24/7 for UK dental clinics",
+      "url": "https://northstarai.co.uk/",
+      "screenshot": "https://northstarai.co.uk/screenshot.png"
+    },
+    "localBusiness": {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "North Star AI",
+      "image": "https://northstarai.co.uk/logo.svg",
+      "description": "AI voice receptionist for UK dental clinics",
+      "url": "https://northstarai.co.uk/",
+      "telephone": "+44-xxx-xxxx",
+      "areaServed": "GB",
+      "priceRange": "£249+"
+    },
+    "faqPage": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How quickly can North Star AI be set up?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "North Star AI can be live in just 7 days with our quick setup process."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does North Star AI cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "North Star AI starts from £249 per month for UK dental clinics."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can North Star AI handle multiple calls?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, North Star AI is designed to handle unlimited concurrent calls 24/7."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is North Star AI secure and compliant?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, North Star AI is fully compliant with UK data protection and healthcare regulations."
+          }
+        }
+      ]
+    },
+    "breadcrumb": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://northstarai.co.uk/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Demo Booking",
+          "item": "https://northstarai.co.uk/demo-booking.html"
+        }
+      ]
+    }
+  },
+  "recommendations": {
+    "priority": "high",
+    "description": "Add these schema markups to improve search visibility and SERP appearance",
+    "implementation": [
+      {
+        "name": "Organization Schema",
+        "importance": "high",
+        "location": "index.html <head>",
+        "benefits": ["Rich snippet", "Knowledge panel", "Brand credibility"]
+      },
+      {
+        "name": "SoftwareApplication Schema",
+        "importance": "high",
+        "location": "index.html <head>",
+        "benefits": ["App rich snippet", "Better product visibility"]
+      },
+      {
+        "name": "FAQ Schema",
+        "importance": "medium",
+        "location": "Add FAQ section + schema",
+        "benefits": ["FAQ rich snippet", "Higher CTR"]
+      },
+      {
+        "name": "LocalBusiness Schema",
+        "importance": "medium",
+        "location": "index.html footer",
+        "benefits": ["Local pack", "Local search visibility"]
+      }
+    ]
+  }
+}
