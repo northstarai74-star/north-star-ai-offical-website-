@@ -81,9 +81,19 @@ class SEOAgent {
   }
 
   extractMetaTag(html, name) {
-    const regex = new RegExp(`<meta\\s+(?:name|property)=["']${name}["']\\s+content=["']([^"']*)["']`, 'i');
-    const match = html.match(regex);
-    return match ? match[1] : null;
+    // Try multiple attribute orderings - match everything up to the closing quote
+    const patterns = [
+      new RegExp(`name="?${name}"?\\s+content="(.*?)"`, 'i'),
+      new RegExp(`content="(.*?)"\\s+name="?${name}"?`, 'i'),
+      new RegExp(`property="?${name}"?\\s+content="(.*?)"`, 'i'),
+      new RegExp(`content="(.*?)"\\s+property="?${name}"?`, 'i'),
+    ];
+
+    for (let regex of patterns) {
+      const match = html.match(regex);
+      if (match && match[1]) return match[1];
+    }
+    return null;
   }
 
   extractTag(html, tag) {
