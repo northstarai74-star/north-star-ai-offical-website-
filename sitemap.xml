@@ -21,6 +21,13 @@
     <mobile:mobile/>
   </url>
   <url>
+    <loc>https://northstarai.co.uk/resources.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <mobile:mobile/>
+  </url>
+  <url>
     <loc>https://northstarai.co.uk/privacy.html</loc>
     <lastmod>2026-09-16</lastmod>
     <changefreq>yearly</changefreq>

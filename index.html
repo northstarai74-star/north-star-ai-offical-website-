@@ -19,8 +19,19 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Google Analytics - Replace GA_ID with your actual Google Analytics ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'GA_ID', { 'anonymize_ip': true });
+</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ProfessionalService","name":"North Star AI","description":"AI voice receptionist for UK dental clinics.","url":"https://northstarai.co.uk/","areaServed":"GB","offers":{"@type":"AggregateOffer","priceCurrency":"GBP","lowPrice":"249"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How quickly can North Star AI be set up?","acceptedAnswer":{"@type":"Answer","text":"North Star AI goes live in 7 days from booking your demo. We handle the technical setup — you just approve the voice settings and we connect it to your phone line. Most clinics are answering calls by day 7."}},{"@type":"Question","name":"How much does North Star AI cost?","acceptedAnswer":{"@type":"Answer","text":"North Star AI starts from £249 per month for dental clinics. This covers unlimited incoming calls, appointment booking, SMS follow-ups, and full integration with your practice management system. No setup fees, no long-term contracts — cancel anytime."}},{"@type":"Question","name":"Will patients know they're talking to AI?","acceptedAnswer":{"@type":"Answer","text":"North Star AI sounds natural and conversational. Most patients don't notice it's AI. We can configure it to mention it's an automated system if you prefer, but the conversation flows naturally and handles complex questions just like a real receptionist would."}},{"@type":"Question","name":"Can it handle emergency calls?","acceptedAnswer":{"@type":"Answer","text":"Yes. North Star AI can be configured to detect keywords in urgent situations (pain, swelling, trauma) and immediately route to your dentist or emergency service. It's trained to handle emergencies with appropriate urgency while protecting your liability."}},{"@type":"Question","name":"Is my patient data secure and GDPR-compliant?","acceptedAnswer":{"@type":"Answer","text":"100% GDPR and HIPAA compliant. All patient data is encrypted in transit and at rest. We use UK data centres, follow strict access controls, and never sell or share data. Every call is securely stored and can be deleted on request. Regular security audits confirm compliance."}},{"@type":"Question","name":"What happens if someone doesn't want to use AI?","acceptedAnswer":{"@type":"Answer","text":"You're in full control. You can configure the AI to offer a \"press 1 to speak to a human\" option on any call. Many clinics use this for their first conversation. After one interaction, most patients opt to use AI for future calls — it's convenient and fast."}},{"@type":"Question","name":"How do I integrate with my practice management system?","acceptedAnswer":{"@type":"Answer","text":"North Star AI integrates with all major UK dental software (Dentally, Exact, Lighthouse, etc.). We handle the integration during your 7-day setup. No manual data entry. Booked appointments automatically appear in your system and patient histories automatically populate the AI's knowledge."}}]}
 </script>
 <style>
 :root{
@@ -835,6 +846,101 @@ footer{border-top:1px solid var(--line);background:var(--ink);padding:50px 0 36p
   </div>
 </section>
 
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="eyebrow-c">
+      <span class="pill">Questions answered</span>
+    </div>
+    <h2 class="h2" style="text-align:center;margin-bottom:12px;">Frequently Asked Questions</h2>
+    <p class="lead" style="text-align:center;margin-bottom:48px;max-width:600px;margin-left:auto;margin-right:auto;">Everything you need to know about North Star AI and how it works for your dental clinic.</p>
+
+    <div style="max-width:700px;margin:0 auto;">
+      <!-- FAQ Item 1 -->
+      <div style="margin-bottom:32px;border:1px solid var(--border);border-radius:16px;overflow:hidden;">
+        <button style="width:100%;padding:24px;text-align:left;background:var(--card);border:none;cursor:pointer;font-size:16px;font-weight:600;color:var(--text);display:flex;justify-content:space-between;align-items:center;transition:background 0.3s;" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none';this.classList.toggle('faq-open');">
+          How quickly can North Star AI be set up?
+          <span style="font-size:20px;">▼</span>
+        </button>
+        <div style="display:none;padding:0 24px 24px;color:var(--muted);background:var(--bg);">
+          <p>North Star AI goes live in 7 days from booking your demo. We handle the technical setup — you just approve the voice settings and we connect it to your phone line. Most clinics are answering calls by day 7.</p>
+        </div>
+      </div>
+
+      <!-- FAQ Item 2 -->
+      <div style="margin-bottom:32px;border:1px solid var(--border);border-radius:16px;overflow:hidden;">
+        <button style="width:100%;padding:24px;text-align:left;background:var(--card);border:none;cursor:pointer;font-size:16px;font-weight:600;color:var(--text);display:flex;justify-content:space-between;align-items:center;transition:background 0.3s;" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none';this.classList.toggle('faq-open');">
+          How much does North Star AI cost?
+          <span style="font-size:20px;">▼</span>
+        </button>
+        <div style="display:none;padding:0 24px 24px;color:var(--muted);background:var(--bg);">
+          <p>North Star AI starts from £249 per month for dental clinics. This covers unlimited incoming calls, appointment booking, SMS follow-ups, and full integration with your practice management system. No setup fees, no long-term contracts — cancel anytime.</p>
+        </div>
+      </div>
+
+      <!-- FAQ Item 3 -->
+      <div style="margin-bottom:32px;border:1px solid var(--border);border-radius:16px;overflow:hidden;">
+        <button style="width:100%;padding:24px;text-align:left;background:var(--card);border:none;cursor:pointer;font-size:16px;font-weight:600;color:var(--text);display:flex;justify-content:space-between;align-items:center;transition:background 0.3s;" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none';this.classList.toggle('faq-open');">
+          Will patients know they're talking to AI?
+          <span style="font-size:20px;">▼</span>
+        </button>
+        <div style="display:none;padding:0 24px 24px;color:var(--muted);background:var(--bg);">
+          <p>North Star AI sounds natural and conversational. Most patients don't notice it's AI. We can configure it to mention it's an automated system if you prefer, but the conversation flows naturally and handles complex questions just like a real receptionist would.</p>
+        </div>
+      </div>
+
+      <!-- FAQ Item 4 -->
+      <div style="margin-bottom:32px;border:1px solid var(--border);border-radius:16px;overflow:hidden;">
+        <button style="width:100%;padding:24px;text-align:left;background:var(--card);border:none;cursor:pointer;font-size:16px;font-weight:600;color:var(--text);display:flex;justify-content:space-between;align-items:center;transition:background 0.3s;" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none';this.classList.toggle('faq-open');">
+          Can it handle emergency calls?
+          <span style="font-size:20px;">▼</span>
+        </button>
+        <div style="display:none;padding:0 24px 24px;color:var(--muted);background:var(--bg);">
+          <p>Yes. North Star AI can be configured to detect keywords in urgent situations (pain, swelling, trauma) and immediately route to your dentist or emergency service. It's trained to handle emergencies with appropriate urgency while protecting your liability.</p>
+        </div>
+      </div>
+
+      <!-- FAQ Item 5 -->
+      <div style="margin-bottom:32px;border:1px solid var(--border);border-radius:16px;overflow:hidden;">
+        <button style="width:100%;padding:24px;text-align:left;background:var(--card);border:none;cursor:pointer;font-size:16px;font-weight:600;color:var(--text);display:flex;justify-content:space-between;align-items:center;transition:background 0.3s;" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none';this.classList.toggle('faq-open');">
+          Is my patient data secure and GDPR-compliant?
+          <span style="font-size:20px;">▼</span>
+        </button>
+        <div style="display:none;padding:0 24px 24px;color:var(--muted);background:var(--bg);">
+          <p>100% GDPR and HIPAA compliant. All patient data is encrypted in transit and at rest. We use UK data centres, follow strict access controls, and never sell or share data. Every call is securely stored and can be deleted on request. Regular security audits confirm compliance.</p>
+        </div>
+      </div>
+
+      <!-- FAQ Item 6 -->
+      <div style="margin-bottom:32px;border:1px solid var(--border);border-radius:16px;overflow:hidden;">
+        <button style="width:100%;padding:24px;text-align:left;background:var(--card);border:none;cursor:pointer;font-size:16px;font-weight:600;color:var(--text);display:flex;justify-content:space-between;align-items:center;transition:background 0.3s;" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none';this.classList.toggle('faq-open');">
+          What happens if someone doesn't want to use AI?
+          <span style="font-size:20px;">▼</span>
+        </button>
+        <div style="display:none;padding:0 24px 24px;color:var(--muted);background:var(--bg);">
+          <p>You're in full control. You can configure the AI to offer a "press 1 to speak to a human" option on any call. Many clinics use this for their first conversation. After one interaction, most patients opt to use AI for future calls — it's convenient and fast.</p>
+        </div>
+      </div>
+
+      <!-- FAQ Item 7 -->
+      <div style="margin-bottom:0;border:1px solid var(--border);border-radius:16px;overflow:hidden;">
+        <button style="width:100%;padding:24px;text-align:left;background:var(--card);border:none;cursor:pointer;font-size:16px;font-weight:600;color:var(--text);display:flex;justify-content:space-between;align-items:center;transition:background 0.3s;" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none';this.classList.toggle('faq-open');">
+          How do I integrate with my practice management system?
+          <span style="font-size:20px;">▼</span>
+        </button>
+        <div style="display:none;padding:0 24px 24px;color:var(--muted);background:var(--bg);">
+          <p>North Star AI integrates with all major UK dental software (Dentally, Exact, Lighthouse, etc.). We handle the integration during your 7-day setup. No manual data entry. Booked appointments automatically appear in your system and patient histories automatically populate the AI's knowledge.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:48px;">
+      <p style="color:var(--muted);margin-bottom:20px;">Still have questions?</p>
+      <a class="btn btn-glass" href="demo-booking.html">Book a Demo</a>
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
 <section id="cta">
   <div class="wrap">
@@ -852,7 +958,7 @@ footer{border-top:1px solid var(--line);background:var(--ink);padding:50px 0 36p
     <div class="foot">
       <a class="logo" href="#"><img src="logo.svg" alt=""> North Star AI</a>
       <nav class="menu">
-        <a href="#hero">Home</a><a href="#bento">Features</a><a href="#benefits">Benefits</a><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="#testimonials">Testimonials</a><a href="#faq">FAQ</a>
+        <a href="#hero">Home</a><a href="#bento">Features</a><a href="#benefits">Benefits</a><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="#testimonials">Testimonials</a><a href="#faq">FAQ</a><a href="resources.html">Resources</a>
       </nav>
     </div>
     <div class="foot-bottom">
