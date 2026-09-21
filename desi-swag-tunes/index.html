@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Desi Swag Tunes Music AI - Stream Your Favorite Songs</title>
-<meta name="description" content="Desi Swag Tunes Music AI - Stream premium Desi music by Mr. Tarun Lakhanpal. Modern AI-powered music platform for authentic Desi vibes and hip-hop beats.">
+<title>Desi Swag Tunes - Premium Desi Music Streaming</title>
+<meta name="description" content="Stream premium Desi music by Mr. Tarun Lakhanpal. Modern music streaming platform with high-quality audio.">
 <link rel="canonical" href="https://desiswagutu​nes.com/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Desi Swag Tunes Music AI - Stream Your Favorite Songs">
-<meta property="og:description" content="Stream premium Desi music by Mr. Tarun Lakhanpal. Modern AI-powered music platform for authentic Desi vibes.">
+<meta property="og:title" content="Desi Swag Tunes - Premium Desi Music Streaming">
+<meta property="og:description" content="Stream premium Desi music by Mr. Tarun Lakhanpal">
 <meta property="og:url" content="https://desiswagutu​nes.com/">
 <meta property="og:image" content="https://desiswagutu​nes.com/og-image.png">
 <script type="application/ld+json">
@@ -21,197 +21,243 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary: #1DB954;
+  --dark-bg: #0f0f0f;
+  --dark-secondary: #191919;
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --accent: #ff006e;
+}
+
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: #fff;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--dark-bg);
+  color: var(--text-primary);
+  line-height: 1.6;
 }
 
 header {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(15, 15, 15, 0.95);
   backdrop-filter: blur(10px);
-  padding: 20px 0;
-  text-align: center;
-  border-bottom: 2px solid rgba(255, 107, 107, 0.5);
+  padding: 1.5rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-header h1 {
-  font-size: 2.5em;
-  margin-bottom: 5px;
-  background: linear-gradient(135deg, #ff6b6b, #ffd93d);
+.nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-header p {
-  font-size: 1.1em;
-  color: #ddd;
-}
-
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 15px;
-}
-
 nav a {
-  color: #fff;
+  color: var(--text-secondary);
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 500;
+  margin-left: 2rem;
   transition: color 0.3s;
-  border-bottom: 2px solid transparent;
-  padding-bottom: 5px;
 }
 
 nav a:hover {
-  color: #ffd93d;
-  border-bottom-color: #ffd93d;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 60px 20px;
-  flex: 1;
+  color: var(--primary);
 }
 
 .hero {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
   text-align: center;
-  margin-bottom: 80px;
 }
 
-.hero h2 {
-  font-size: 3em;
-  margin-bottom: 20px;
-  line-height: 1.2;
+.hero h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  line-height: 1.1;
 }
 
 .hero p {
-  font-size: 1.2em;
-  color: #e0e0e0;
-  margin-bottom: 30px;
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .cta-button {
   display: inline-block;
-  background: linear-gradient(135deg, #ff6b6b, #ff8787);
-  color: white;
-  padding: 15px 40px;
+  background: var(--primary);
+  color: black;
+  padding: 1rem 2.5rem;
   border-radius: 50px;
   text-decoration: none;
   font-weight: 700;
-  font-size: 1.1em;
-  transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 8px 30px rgba(255, 107, 107, 0.4);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border: 2px solid var(--primary);
 }
 
 .cta-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 40px rgba(255, 107, 107, 0.6);
+  background: transparent;
+  color: var(--primary);
+  transform: scale(1.05);
 }
 
 .features {
+  max-width: 1400px;
+  margin: 6rem auto;
+  padding: 0 2rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  margin-top: 60px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
 }
 
 .feature-card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  padding: 30px;
-  border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  text-align: center;
-  transition: transform 0.3s;
+  background: var(--dark-secondary);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .feature-card:hover {
-  transform: translateY(-5px);
+  border-color: var(--primary);
+  transform: translateY(-10px);
+  background: rgba(29, 185, 84, 0.05);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .feature-card h3 {
-  margin-bottom: 10px;
-  color: #ffd93d;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+
+.feature-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.artist-section {
+  background: linear-gradient(135deg, rgba(29, 185, 84, 0.1), rgba(255, 0, 110, 0.1));
+  padding: 4rem 2rem;
+  margin: 4rem 2rem;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.artist-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.artist-section p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  line-height: 1.8;
 }
 
 footer {
-  background: rgba(0, 0, 0, 0.9);
-  padding: 30px;
+  background: var(--dark-secondary);
+  padding: 2rem;
   text-align: center;
-  border-top: 2px solid rgba(255, 107, 107, 0.5);
-  margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 4rem;
 }
 
 footer p {
-  color: #aaa;
+  color: var(--text-secondary);
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
 }
 
 @media (max-width: 768px) {
-  header h1 {
-    font-size: 1.8em;
-  }
-
-  .hero h2 {
-    font-size: 1.8em;
-  }
-
-  nav {
-    flex-direction: column;
-    gap: 10px;
-  }
+  .hero { padding: 3rem 1rem; }
+  .hero h1 { font-size: 2.5rem; }
+  nav a { margin-left: 1rem; }
+  .features { grid-template-columns: 1fr; }
 }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>🎵 DESI SWAG TUNES 🎵</h1>
-  <p>Music AI Platform - Stream Premium Desi Music</p>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="music.html">Music</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <div class="nav-container">
+    <div class="logo">🎵 DESI SWAG TUNES</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="music.html">Music</a>
+      <a href="#artist">Artist</a>
+    </nav>
+  </div>
 </header>
 
-<div class="container">
-  <div class="hero">
-    <h2>Experience Premium Desi Music</h2>
-    <p>Featuring exclusive tracks by Mr. Tarun Lakhanpal</p>
-    <a href="music.html" class="cta-button">Listen Now 🎧</a>
-  </div>
+<main>
+  <section class="hero">
+    <h1>Premium Desi Music Streaming</h1>
+    <p>Experience the best Desi music curated exclusively for you. High-quality audio, exclusive tracks, and incredible artistry.</p>
+    <a href="music.html" class="cta-button">Explore Music 🎧</a>
+  </section>
 
-  <div class="features">
+  <section class="features">
     <div class="feature-card">
-      <h3>🎼 Curated Collection</h3>
-      <p>Handpicked Desi music tracks for every mood</p>
+      <div class="feature-icon">🎵</div>
+      <h3>5 Premium Tracks</h3>
+      <p>Exclusive songs by Mr. Tarun Lakhanpal with superior audio quality</p>
     </div>
     <div class="feature-card">
-      <h3>🤖 AI Recommendations</h3>
-      <p>Smart playlists based on your preferences</p>
+      <div class="feature-icon">🎬</div>
+      <h3>Music Videos</h3>
+      <p>Watch high-quality music videos alongside your favorite songs</p>
     </div>
     <div class="feature-card">
-      <h3>🎧 High Quality Audio</h3>
-      <p>Crystal clear sound for the best listening experience</p>
+      <div class="feature-icon">🌍</div>
+      <h3>Global Reach</h3>
+      <p>Stream your favorite Desi music from anywhere in the world</p>
     </div>
     <div class="feature-card">
-      <h3>🎵 Artist Focus</h3>
-      <p>Explore the best work of Mr. Tarun Lakhanpal</p>
+      <div class="feature-icon">⚡</div>
+      <h3>Fast Streaming</h3>
+      <p>Optimized for ultra-fast playback with zero buffering</p>
     </div>
-  </div>
-</div>
+  </section>
+
+  <section class="artist-section" id="artist">
+    <h2>Meet the Artist</h2>
+    <p><strong>Mr. Tarun Lakhanpal</strong> is a visionary in the Desi music scene, blending traditional elements with modern hip-hop beats. His unique style has captivated audiences worldwide.</p>
+    <a href="music.html" class="cta-button">Listen Now 🎧</a>
+  </section>
+</main>
 
 <footer>
   <p>&copy; 2026 Desi Swag Tunes Music AI. All rights reserved.</p>
-  <p>Powered by AI Music Platform | Artist: Mr. Tarun Lakhanpal</p>
+  <p>Crafted with 💚 | Artist: Mr. Tarun Lakhanpal</p>
 </footer>
 
 </body>
