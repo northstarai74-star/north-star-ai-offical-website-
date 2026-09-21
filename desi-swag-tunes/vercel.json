@@ -1,0 +1,52 @@
+{
+  "version": 2,
+  "buildCommand": "npm install",
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "builds": [
+    {
+      "src": "server.js",
+      "use": "@vercel/node",
+      "config": {
+        "maxLambdaSize": "50mb"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/song[0-9]\\.(mpeg|mp4)$",
+      "dest": "/song$1.$2",
+      "headers": {
+        "Cache-Control": "public, max-age=3600",
+        "Content-Type": "audio/mpeg"
+      }
+    },
+    {
+      "src": "/(.*\\.html)$",
+      "dest": "/$1",
+      "headers": {
+        "Cache-Control": "public, max-age=3600"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/server.js"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/song[0-9]\\.(mpeg|mp4)$",
+      "headers": [
+        {
+          "key": "Accept-Ranges",
+          "value": "bytes"
+        },
+        {
+          "key": "Content-Type",
+          "value": "audio/mpeg"
+        }
+      ]
+    }
+  ]
+}
