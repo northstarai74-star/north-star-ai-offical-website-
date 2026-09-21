@@ -3,109 +3,114 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Desi Swag Tunes - Premium Music Streaming</title>
-<meta name="description" content="Stream premium Desi music by Mr. Tarun Lakhanpal">
+<title>DESI SWAG TUNES - Music Streaming</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-  min-height: 100vh;
-  color: white;
+  background: #000;
+  color: #fff;
+  font-family: 'Arial Black', sans-serif;
+  overflow-x: hidden;
 }
 
 header {
-  background: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
-  padding: 1.5rem 2rem;
+  background: #111;
+  border-bottom: 3px solid #00ff00;
+  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
 }
 
 .logo {
-  font-size: 2rem;
-  font-weight: 900;
-  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #00ff00;
+  text-shadow: 0 0 10px #00ff00, 0 0 20px #ff00ff;
+  letter-spacing: 2px;
 }
 
 nav a {
-  color: white;
+  color: #00ff00;
   text-decoration: none;
-  margin-left: 2rem;
-  font-weight: 600;
+  margin-left: 30px;
+  font-weight: bold;
+  font-size: 1.1rem;
   transition: all 0.3s;
 }
 
 nav a:hover {
-  transform: scale(1.1);
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  color: #ff00ff;
+  text-shadow: 0 0 10px #ff00ff;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 60px 20px;
+.hero {
   text-align: center;
+  padding: 100px 20px;
+  background: linear-gradient(180deg, #1a001a 0%, #000 100%);
+  border-bottom: 3px solid #ff00ff;
+  box-shadow: 0 0 30px rgba(255, 0, 255, 0.3);
 }
 
-h1 {
-  font-size: 4.5rem;
-  font-weight: 900;
+.hero h1 {
+  font-size: 5rem;
   margin-bottom: 20px;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  line-height: 1.1;
+  color: #ff00ff;
+  text-shadow: 0 0 20px #ff00ff, 0 0 40px #00ff00;
+  letter-spacing: 3px;
 }
 
-p {
-  font-size: 1.3rem;
+.hero p {
+  font-size: 1.5rem;
+  color: #00ff00;
+  text-shadow: 0 0 10px #00ff00;
   margin-bottom: 30px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  opacity: 0.95;
 }
 
 .btn {
   display: inline-block;
-  background: white;
-  color: #667eea;
-  padding: 15px 50px;
-  border-radius: 50px;
+  background: #ff00ff;
+  color: #000;
+  padding: 20px 50px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border: 3px solid #00ff00;
+  cursor: pointer;
   text-decoration: none;
-  font-weight: 700;
-  font-size: 1.1rem;
   transition: all 0.3s;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 20px #ff00ff;
 }
 
 .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  background: #00ff00;
+  color: #000;
+  box-shadow: 0 0 40px #00ff00;
+  transform: scale(1.1);
 }
 
 .features {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  margin-top: 80px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 60px 20px;
+  background: #000;
 }
 
 .feature {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
+  background: #1a1a1a;
+  border: 2px solid #00ff00;
   padding: 30px;
-  border-radius: 20px;
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
   transition: all 0.3s;
 }
 
 .feature:hover {
-  background: rgba(255, 255, 255, 0.25);
-  transform: translateY(-10px);
-  border-color: rgba(255, 255, 255, 0.6);
+  border-color: #ff00ff;
+  box-shadow: 0 0 30px #ff00ff;
+  transform: scale(1.05);
 }
 
 .feature-icon {
@@ -114,66 +119,77 @@ p {
 }
 
 .feature h3 {
-  font-size: 1.3rem;
+  color: #00ff00;
   margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.feature p {
+  color: #aaa;
 }
 
 footer {
-  background: rgba(0, 0, 0, 0.4);
+  background: #111;
   text-align: center;
-  padding: 20px;
-  margin-top: 60px;
-  font-size: 0.9rem;
+  padding: 30px;
+  border-top: 3px solid #00ff00;
+  color: #00ff00;
+  font-weight: bold;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+}
+
+@media (max-width: 1024px) {
+  .features { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
-  h1 { font-size: 2.5rem; }
-  nav a { margin-left: 1rem; }
+  .features { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 3rem; }
+  nav a { margin-left: 10px; font-size: 0.9rem; }
 }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="logo">🎵 DESI SWAG</div>
+  <div class="logo">🎵 DESI SWAG 🎵</div>
   <nav>
-    <a href="index.html">Home</a>
-    <a href="music.html">Music</a>
-    <a href="#artist">Artist</a>
+    <a href="/">HOME</a>
+    <a href="/music.html">MUSIC</a>
   </nav>
 </header>
 
-<div class="container">
-  <h1>🎶 Desi Swag Tunes 🎶</h1>
-  <p>Stream Premium Desi Music - 5 Exclusive Tracks</p>
-  <a href="music.html" class="btn">🎧 Listen Now</a>
+<div class="hero">
+  <h1>DESI SWAG TUNES</h1>
+  <p>⚡ PREMIUM MUSIC STREAMING ⚡</p>
+  <a href="/music.html" class="btn">🎧 PLAY NOW</a>
+</div>
 
-  <div class="features">
-    <div class="feature">
-      <div class="feature-icon">🎵</div>
-      <h3>5 Premium Tracks</h3>
-      <p>Exclusive songs by Mr. Tarun Lakhanpal</p>
-    </div>
-    <div class="feature">
-      <div class="feature-icon">🎬</div>
-      <h3>Music Video</h3>
-      <p>Watch the official music video</p>
-    </div>
-    <div class="feature">
-      <div class="feature-icon">📝</div>
-      <h3>Full Lyrics</h3>
-      <p>Read lyrics for every song</p>
-    </div>
-    <div class="feature">
-      <div class="feature-icon">⚡</div>
-      <h3>Fast Streaming</h3>
-      <p>Ultra-fast playback with zero lag</p>
-    </div>
+<div class="features">
+  <div class="feature">
+    <div class="feature-icon">🎵</div>
+    <h3>5 TRACKS</h3>
+    <p>Premium Quality</p>
+  </div>
+  <div class="feature">
+    <div class="feature-icon">🎬</div>
+    <h3>MUSIC VIDEO</h3>
+    <p>HD Quality</p>
+  </div>
+  <div class="feature">
+    <div class="feature-icon">📝</div>
+    <h3>FULL LYRICS</h3>
+    <p>All Songs</p>
+  </div>
+  <div class="feature">
+    <div class="feature-icon">⚡</div>
+    <h3>FAST STREAM</h3>
+    <p>Zero Buffering</p>
   </div>
 </div>
 
 <footer>
-  <p>&copy; 2026 Desi Swag Tunes | Artist: Mr. Tarun Lakhanpal</p>
+  © 2026 DESI SWAG TUNES | Artist: Mr. Tarun Lakhanpal
 </footer>
 
 </body>
