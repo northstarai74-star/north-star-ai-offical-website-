@@ -164,6 +164,55 @@ video {
   margin: 5px 0;
 }
 
+.lyrics-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  font-size: 0.95em;
+}
+
+.lyrics-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.lyrics-container {
+  margin-top: 15px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  border-left: 4px solid #ffd93d;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.lyrics-text {
+  font-size: 0.95em;
+  line-height: 1.8;
+  color: #e0e0e0;
+}
+
+.lyrics-text p {
+  margin: 12px 0;
+}
+
 footer {
   background: rgba(0, 0, 0, 0.9);
   padding: 30px;
@@ -224,8 +273,8 @@ footer p {
       <p class="song-artist">👤 Mr. Tarun Lakhanpal</p>
 
       <div class="player-wrapper">
-        <audio controls>
-          <source src="song1.mpeg" type="audio/mpeg">
+        <audio controls preload="metadata" crossorigin="anonymous">
+          <source src="./song1.mpeg" type="audio/mpeg">
           Your browser does not support the audio element.
         </audio>
       </div>
@@ -234,6 +283,21 @@ footer p {
         <p><strong>Genre:</strong> Desi Hip-Hop</p>
         <p><strong>Duration:</strong> 3:45</p>
         <p><strong>Released:</strong> 2026</p>
+      </div>
+
+      <button class="lyrics-btn" onclick="toggleLyrics(event, 'lyrics-1')">📝 Show Lyrics</button>
+      <div class="lyrics-container" id="lyrics-1" style="display:none;">
+        <div class="lyrics-text">
+          <p><strong>🎤 Desi Swag Flow</strong></p>
+          <p>Teri jeans da fashion, mera punjabi passion<br>
+          Desi swag flow, yeah that's the action<br>
+          Tarun ka takkar, nobody can match kar<br>
+          Desi beat banava, culture di shakaar</p>
+          <p>Lakhanpal ka naam, pehchan da game<br>
+          Desi swag flow, worldwide da fame<br>
+          Dhol nu sunle, dil da jungli rumble<br>
+          Tarun lakhanpal, humble but tough tumble</p>
+        </div>
       </div>
     </div>
 
@@ -244,8 +308,8 @@ footer p {
       <p class="song-artist">👤 Mr. Tarun Lakhanpal</p>
 
       <div class="player-wrapper">
-        <audio controls>
-          <source src="song2.mpeg" type="audio/mpeg">
+        <audio controls preload="metadata" crossorigin="anonymous">
+          <source src="./song2.mpeg" type="audio/mpeg">
           Your browser does not support the audio element.
         </audio>
       </div>
@@ -254,6 +318,21 @@ footer p {
         <p><strong>Genre:</strong> Punjabi Rap</p>
         <p><strong>Duration:</strong> 3:22</p>
         <p><strong>Released:</strong> 2026</p>
+      </div>
+
+      <button class="lyrics-btn" onclick="toggleLyrics(event, 'lyrics-2')">📝 Show Lyrics</button>
+      <div class="lyrics-container" id="lyrics-2" style="display:none;">
+        <div class="lyrics-text">
+          <p><strong>🎤 Desi Takeover</strong></p>
+          <p>Teri sohni city, mera desi city<br>
+          Takeover karoge, ye kuch nahi giddy<br>
+          Tarun lakhanpal, naam da kharcha<br>
+          Desi music scene, main hi hu marcha</p>
+          <p>Beat drop karo, nation ko jago<br>
+          Punjabi swag, ab rulega nacho<br>
+          Lakhanpal ka style, culture ka pride<br>
+          Desi takeover, worldwide ride</p>
+        </div>
       </div>
     </div>
 
@@ -264,8 +343,8 @@ footer p {
       <p class="song-artist">👤 Mr. Tarun Lakhanpal</p>
 
       <div class="player-wrapper">
-        <audio controls>
-          <source src="song3.mpeg" type="audio/mpeg">
+        <audio controls preload="metadata" crossorigin="anonymous">
+          <source src="./song3.mpeg" type="audio/mpeg">
           Your browser does not support the audio element.
         </audio>
       </div>
@@ -274,6 +353,21 @@ footer p {
         <p><strong>Genre:</strong> Bollywood Remix</p>
         <p><strong>Duration:</strong> 3:58</p>
         <p><strong>Released:</strong> 2026</p>
+      </div>
+
+      <button class="lyrics-btn" onclick="toggleLyrics(event, 'lyrics-3')">📝 Show Lyrics</button>
+      <div class="lyrics-container" id="lyrics-3" style="display:none;">
+        <div class="lyrics-text">
+          <p><strong>🎤 Lakhanpal Vibes</strong></p>
+          <p>Lakhanpal ka vibe, dil nu samajh jao<br>
+          Bollywood da beat, punjabi nu badaao<br>
+          Remix da swag, culture ka fusion<br>
+          Tarun lakhanpal, ye hai conclusion</p>
+          <p>Nachdi phire dil, beats di chakri<br>
+          Lakhanpal vibes, tere te pakri<br>
+          Desi bollywood blend, music ka throne<br>
+          Lakhanpal ka zone, ye sab known</p>
+        </div>
       </div>
     </div>
 
@@ -284,8 +378,8 @@ footer p {
       <p class="song-artist">👤 Mr. Tarun Lakhanpal</p>
 
       <div class="player-wrapper">
-        <audio controls>
-          <source src="song4.mpeg" type="audio/mpeg">
+        <audio controls preload="metadata" crossorigin="anonymous">
+          <source src="./song4.mpeg" type="audio/mpeg">
           Your browser does not support the audio element.
         </audio>
       </div>
@@ -294,6 +388,21 @@ footer p {
         <p><strong>Genre:</strong> Urban Desi</p>
         <p><strong>Duration:</strong> 4:12</p>
         <p><strong>Released:</strong> 2026</p>
+      </div>
+
+      <button class="lyrics-btn" onclick="toggleLyrics(event, 'lyrics-4')">📝 Show Lyrics</button>
+      <div class="lyrics-container" id="lyrics-4" style="display:none;">
+        <div class="lyrics-text">
+          <p><strong>🎤 Swag Revolution</strong></p>
+          <p>Urban desi swag, ye ek naya fever<br>
+          Tarun lakhanpal, hoon main clever<br>
+          Revolution nu start kiye, ye tera mission<br>
+          Desi music scene, now under commission</p>
+          <p>City lights da glow, beats da thunder<br>
+          Swag revolution, tere under<br>
+          Lakhanpal ka dream, sachi hue sone<br>
+          Urban desi swag, ab known everywhere tone</p>
+        </div>
       </div>
     </div>
 
@@ -304,8 +413,8 @@ footer p {
       <p class="song-artist">👤 Mr. Tarun Lakhanpal</p>
 
       <div class="player-wrapper">
-        <video controls style="height: auto;">
-          <source src="song5.mp4" type="video/mp4">
+        <video controls preload="metadata" style="height: auto;" crossorigin="anonymous">
+          <source src="./song5.mp4" type="video/mp4">
           Your browser does not support the video element.
         </video>
       </div>
@@ -314,6 +423,25 @@ footer p {
         <p><strong>Genre:</strong> Desi Music Video</p>
         <p><strong>Duration:</strong> 5:30</p>
         <p><strong>Released:</strong> 2026</p>
+      </div>
+
+      <button class="lyrics-btn" onclick="toggleLyrics(event, 'lyrics-5')">📝 Show Lyrics</button>
+      <div class="lyrics-container" id="lyrics-5" style="display:none;">
+        <div class="lyrics-text">
+          <p><strong>🎤 Main Hoon Tarun</strong></p>
+          <p>Main hoon Tarun, Lakhanpal da naam<br>
+          Desi music scene, mere haath da kaam<br>
+          Lyrics da chakkar, beats da game<br>
+          Tarun lakhanpal, worldwide da fame</p>
+          <p>Punjab da bhangra, city da swag<br>
+          Mera music blend, no need of brag<br>
+          Millions de fans, hearts di dhakka<br>
+          Main hoon tarun, ye sab saccha</p>
+          <p>Desi tunes forever, culture da pride<br>
+          Tarun lakhanpal, worldwide ride<br>
+          Music hi jeewan, beat hi saans<br>
+          Main hoon tarun, ye tera chance</p>
+        </div>
       </div>
     </div>
 
@@ -335,6 +463,22 @@ footer p {
   <p><strong>Artist:</strong> Mr. Tarun Lakhanpal | <strong>Platform:</strong> AI Music Streaming</p>
   <p>Enjoy high-quality Desi music anytime, anywhere 🎵</p>
 </footer>
+
+<script>
+function toggleLyrics(event, id) {
+  event.preventDefault();
+  const lyricsDiv = document.getElementById(id);
+  const btn = event.target;
+
+  if (lyricsDiv.style.display === 'none') {
+    lyricsDiv.style.display = 'block';
+    btn.textContent = '📝 Hide Lyrics';
+  } else {
+    lyricsDiv.style.display = 'none';
+    btn.textContent = '📝 Show Lyrics';
+  }
+}
+</script>
 
 </body>
 </html>
