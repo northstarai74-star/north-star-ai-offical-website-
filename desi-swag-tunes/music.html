@@ -3,244 +3,186 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Music - Desi Swag Tunes | Stream Premium Desi Songs</title>
-<meta name="description" content="Stream premium Desi music tracks by Mr. Tarun Lakhanpal including Desi Swag Flow, Desi Takeover, Lakhanpal Vibes and more.">
-<link rel="canonical" href="https://desiswagutu​nes.com/music.html">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Music - Desi Swag Tunes | Premium Desi Songs">
-<meta property="og:description" content="Stream 5 exclusive Desi music tracks by Mr. Tarun Lakhanpal">
-<meta property="og:url" content="https://desiswagutu​nes.com/music.html">
-<meta property="og:image" content="https://desiswagutu​nes.com/og-image.png">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"MusicPlaylist","name":"Desi Swag Tunes","description":"5 exclusive Desi music tracks by Mr. Tarun Lakhanpal","url":"https://desiswagutu​nes.com/music.html"}
-</script>
+<title>Music - Desi Swag Tunes</title>
+<meta name="description" content="Stream premium Desi music by Mr. Tarun Lakhanpal">
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  --primary: #1DB954;
-  --dark-bg: #0f0f0f;
-  --dark-secondary: #191919;
-  --dark-tertiary: #282828;
-  --text-primary: #ffffff;
-  --text-secondary: #b3b3b3;
-  --accent: #ff006e;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: var(--dark-bg);
-  color: var(--text-primary);
-  line-height: 1.6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  min-height: 100vh;
+  color: white;
 }
 
 header {
-  background: rgba(15, 15, 15, 0.95);
+  background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
   padding: 1.5rem 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.nav-container {
-  max-width: 1400px;
-  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .logo {
-  font-size: 1.8rem;
-  font-weight: 800;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-size: 2rem;
+  font-weight: 900;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 nav a {
-  color: var(--text-secondary);
+  color: white;
   text-decoration: none;
-  font-weight: 500;
   margin-left: 2rem;
-  transition: color 0.3s;
+  font-weight: 600;
+  transition: all 0.3s;
 }
 
 nav a:hover {
-  color: var(--primary);
+  transform: scale(1.1);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 
-.page-header {
-  max-width: 1400px;
+.container {
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 3rem 2rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 40px 20px;
 }
 
-.page-header h1 {
+h1 {
   font-size: 3rem;
-  margin-bottom: 0.5rem;
-  color: var(--primary);
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 10px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-.page-header p {
-  color: var(--text-secondary);
+.subtitle {
+  text-align: center;
   font-size: 1.1rem;
+  margin-bottom: 40px;
+  opacity: 0.9;
 }
 
 .songs-grid {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 3rem 2rem;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
 }
 
 .song-card {
-  background: var(--dark-secondary);
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 25px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
   transition: all 0.3s ease;
 }
 
 .song-card:hover {
-  background: var(--dark-tertiary);
-  border-color: var(--primary);
-  transform: translateY(-8px);
-}
-
-.song-header {
-  padding: 1.5rem;
-  background: linear-gradient(135deg, rgba(29, 185, 84, 0.2), rgba(255, 0, 110, 0.2));
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-15px);
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
 }
 
 .song-number {
   display: inline-block;
-  background: var(--primary);
-  color: black;
-  padding: 0.4rem 1rem;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 8px 16px;
   border-radius: 20px;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 700;
-  margin-bottom: 0.8rem;
+  margin-bottom: 12px;
 }
 
 .song-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 0.3rem;
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 15px 0;
 }
 
 .song-artist {
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-}
-
-.song-body {
-  padding: 1.5rem;
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 15px;
 }
 
 .player-wrapper {
-  background: var(--dark-tertiary);
-  padding: 1rem;
-  border-radius: 8px;
-  margin-bottom: 1rem;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  border-radius: 12px;
+  margin: 20px 0;
 }
 
 audio, video {
   width: 100%;
   height: 45px;
-  border-radius: 6px;
-  accent-color: var(--primary);
+  border-radius: 8px;
+  accent-color: #667eea;
 }
 
 .song-info {
   font-size: 0.9rem;
-  color: var(--text-secondary);
-  margin-bottom: 1rem;
+  margin: 15px 0;
+  padding: 10px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .song-info p {
-  margin: 0.4rem 0;
-  padding: 0.4rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  margin: 5px 0;
+  opacity: 0.85;
 }
 
 .lyrics-btn {
   width: 100%;
-  background: var(--primary);
-  color: black;
-  border: none;
-  padding: 0.8rem;
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 700;
   cursor: pointer;
-  font-weight: 600;
-  transition: all 0.3s ease;
+  margin-top: 15px;
+  transition: all 0.3s;
 }
 
 .lyrics-btn:hover {
-  background: rgba(29, 185, 84, 0.8);
-  transform: scale(1.02);
+  background: rgba(255, 255, 255, 0.6);
+  transform: scale(1.05);
 }
 
 .lyrics-container {
-  margin-top: 1rem;
-  padding: 1rem;
-  background: rgba(29, 185, 84, 0.1);
-  border-left: 3px solid var(--primary);
-  border-radius: 6px;
-  animation: slideDown 0.3s ease-out;
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  margin-top: 15px;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.2);
+  border-left: 4px solid rgba(255, 255, 255, 0.6);
+  border-radius: 8px;
 }
 
 .lyrics-text {
-  font-size: 0.9rem;
-  line-height: 1.7;
-  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.8;
 }
 
 .lyrics-text p {
-  margin: 0.8rem 0;
-  font-weight: 500;
+  margin: 8px 0;
 }
 
 footer {
-  background: var(--dark-secondary);
-  padding: 2rem;
+  background: rgba(0, 0, 0, 0.4);
   text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  margin-top: 3rem;
-}
-
-footer p {
-  color: var(--text-secondary);
-  margin: 0.5rem 0;
-  font-size: 0.9rem;
+  padding: 30px 20px;
+  margin-top: 40px;
 }
 
 @media (max-width: 768px) {
-  .page-header { padding: 2rem 1rem; }
-  .page-header h1 { font-size: 2rem; }
+  h1 { font-size: 2rem; }
   .songs-grid { grid-template-columns: 1fr; }
   nav a { margin-left: 1rem; }
 }
@@ -249,31 +191,24 @@ footer p {
 <body>
 
 <header>
-  <div class="nav-container">
-    <div class="logo">🎵 DESI SWAG TUNES</div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="music.html">Music</a>
-      <a href="index.html#artist">Artist</a>
-    </nav>
-  </div>
+  <div class="logo">🎵 DESI SWAG</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="music.html">Music</a>
+  </nav>
 </header>
 
-<div class="page-header">
-  <h1>🎧 Your Music</h1>
-  <p>5 Premium Tracks | 20+ Minutes | High-Quality Audio</p>
-</div>
+<div class="container">
+  <h1>🎧 All Songs</h1>
+  <div class="subtitle">5 Premium Tracks by Mr. Tarun Lakhanpal</div>
 
-<div class="songs-grid">
+  <div class="songs-grid">
 
-  <!-- Song 1 -->
-  <div class="song-card">
-    <div class="song-header">
+    <!-- Song 1 -->
+    <div class="song-card">
       <span class="song-number">Track 01</span>
       <div class="song-title">Desi Swag Flow</div>
       <div class="song-artist">👤 Mr. Tarun Lakhanpal</div>
-    </div>
-    <div class="song-body">
       <div class="player-wrapper">
         <audio controls preload="metadata">
           <source src="/api/songs?file=song1.mpeg" type="audio/mpeg">
@@ -283,26 +218,21 @@ footer p {
       <div class="song-info">
         <p><strong>Genre:</strong> Desi Hip-Hop</p>
         <p><strong>Duration:</strong> 3:45</p>
-        <p><strong>Released:</strong> 2026</p>
       </div>
       <button class="lyrics-btn" onclick="toggleLyrics(event, 'lyrics-1')">📝 Show Lyrics</button>
       <div class="lyrics-container" id="lyrics-1" style="display:none;">
         <div class="lyrics-text">
           <p><strong>Desi Swag Flow</strong></p>
-          <p>Teri jeans da fashion, mera punjabi passion<br>Desi swag flow, yeah that's the action<br>Tarun ka takkar, nobody can match kar<br>Desi beat banava, culture di shakaar</p>
+          <p>Teri jeans da fashion, mera punjabi passion<br>Desi swag flow, yeah that's the action</p>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Song 2 -->
-  <div class="song-card">
-    <div class="song-header">
+    <!-- Song 2 -->
+    <div class="song-card">
       <span class="song-number">Track 02</span>
       <div class="song-title">Desi Takeover</div>
       <div class="song-artist">👤 Mr. Tarun Lakhanpal</div>
-    </div>
-    <div class="song-body">
       <div class="player-wrapper">
         <audio controls preload="metadata">
           <source src="/api/songs?file=song2.mpeg" type="audio/mpeg">
@@ -312,26 +242,21 @@ footer p {
       <div class="song-info">
         <p><strong>Genre:</strong> Punjabi Rap</p>
         <p><strong>Duration:</strong> 3:22</p>
-        <p><strong>Released:</strong> 2026</p>
       </div>
       <button class="lyrics-btn" onclick="toggleLyrics(event, 'lyrics-2')">📝 Show Lyrics</button>
       <div class="lyrics-container" id="lyrics-2" style="display:none;">
         <div class="lyrics-text">
           <p><strong>Desi Takeover</strong></p>
-          <p>Teri sohni city, mera desi city<br>Takeover karoge, ye kuch nahi giddy<br>Tarun lakhanpal, naam da kharcha<br>Desi music scene, main hi hu marcha</p>
+          <p>Teri sohni city, mera desi city<br>Takeover karoge, ye kuch nahi giddy</p>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Song 3 -->
-  <div class="song-card">
-    <div class="song-header">
+    <!-- Song 3 -->
+    <div class="song-card">
       <span class="song-number">Track 03</span>
       <div class="song-title">Lakhanpal Vibes</div>
       <div class="song-artist">👤 Mr. Tarun Lakhanpal</div>
-    </div>
-    <div class="song-body">
       <div class="player-wrapper">
         <audio controls preload="metadata">
           <source src="/api/songs?file=song3.mpeg" type="audio/mpeg">
@@ -341,26 +266,21 @@ footer p {
       <div class="song-info">
         <p><strong>Genre:</strong> Bollywood Remix</p>
         <p><strong>Duration:</strong> 3:58</p>
-        <p><strong>Released:</strong> 2026</p>
       </div>
       <button class="lyrics-btn" onclick="toggleLyrics(event, 'lyrics-3')">📝 Show Lyrics</button>
       <div class="lyrics-container" id="lyrics-3" style="display:none;">
         <div class="lyrics-text">
           <p><strong>Lakhanpal Vibes</strong></p>
-          <p>Lakhanpal ka vibe, dil nu samajh jao<br>Bollywood da beat, punjabi nu badaao<br>Remix da swag, culture ka fusion<br>Tarun lakhanpal, ye hai conclusion</p>
+          <p>Lakhanpal ka vibe, dil nu samajh jao<br>Bollywood da beat, punjabi nu badaao</p>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Song 4 -->
-  <div class="song-card">
-    <div class="song-header">
+    <!-- Song 4 -->
+    <div class="song-card">
       <span class="song-number">Track 04</span>
       <div class="song-title">Swag Revolution</div>
       <div class="song-artist">👤 Mr. Tarun Lakhanpal</div>
-    </div>
-    <div class="song-body">
       <div class="player-wrapper">
         <audio controls preload="metadata">
           <source src="/api/songs?file=song4.mpeg" type="audio/mpeg">
@@ -370,26 +290,21 @@ footer p {
       <div class="song-info">
         <p><strong>Genre:</strong> Urban Desi</p>
         <p><strong>Duration:</strong> 4:12</p>
-        <p><strong>Released:</strong> 2026</p>
       </div>
       <button class="lyrics-btn" onclick="toggleLyrics(event, 'lyrics-4')">📝 Show Lyrics</button>
       <div class="lyrics-container" id="lyrics-4" style="display:none;">
         <div class="lyrics-text">
           <p><strong>Swag Revolution</strong></p>
-          <p>Urban desi swag, ye ek naya fever<br>Tarun lakhanpal, hoon main clever<br>Revolution nu start kiye, ye tera mission<br>Desi music scene, now under commission</p>
+          <p>Urban desi swag, ye ek naya fever<br>Tarun lakhanpal, hoon main clever</p>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Song 5 -->
-  <div class="song-card">
-    <div class="song-header">
+    <!-- Song 5 -->
+    <div class="song-card">
       <span class="song-number">Track 05 🎬</span>
       <div class="song-title">Main Hoon Tarun</div>
       <div class="song-artist">👤 Mr. Tarun Lakhanpal</div>
-    </div>
-    <div class="song-body">
       <div class="player-wrapper">
         <video controls preload="metadata">
           <source src="/api/songs?file=song5.mp4" type="video/mp4">
@@ -399,36 +314,34 @@ footer p {
       <div class="song-info">
         <p><strong>Genre:</strong> Music Video</p>
         <p><strong>Duration:</strong> 5:30</p>
-        <p><strong>Released:</strong> 2026</p>
       </div>
       <button class="lyrics-btn" onclick="toggleLyrics(event, 'lyrics-5')">📝 Show Lyrics</button>
       <div class="lyrics-container" id="lyrics-5" style="display:none;">
         <div class="lyrics-text">
           <p><strong>Main Hoon Tarun</strong></p>
-          <p>Main hoon Tarun, Lakhanpal da naam<br>Desi music scene, mere haath da kaam<br>Lyrics da chakkar, beats da game<br>Tarun lakhanpal, worldwide da fame</p>
+          <p>Main hoon Tarun, Lakhanpal da naam<br>Desi music scene, mere haath da kaam</p>
         </div>
       </div>
     </div>
-  </div>
 
+  </div>
 </div>
 
 <footer>
-  <p>&copy; 2026 Desi Swag Tunes. Premium Music Streaming.</p>
-  <p>Artist: Mr. Tarun Lakhanpal | Curated with 💚</p>
+  <p>&copy; 2026 Desi Swag Tunes | Artist: Mr. Tarun Lakhanpal | Music Streaming Platform</p>
 </footer>
 
 <script>
 function toggleLyrics(event, id) {
   event.preventDefault();
-  const lyricsDiv = document.getElementById(id);
+  const lyrics = document.getElementById(id);
   const btn = event.target;
   
-  if (lyricsDiv.style.display === 'none') {
-    lyricsDiv.style.display = 'block';
+  if (lyrics.style.display === 'none') {
+    lyrics.style.display = 'block';
     btn.textContent = '📝 Hide Lyrics';
   } else {
-    lyricsDiv.style.display = 'none';
+    lyrics.style.display = 'none';
     btn.textContent = '📝 Show Lyrics';
   }
 }
